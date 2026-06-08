@@ -329,8 +329,13 @@ export default function Globe({ worldTopojson, worldBoundaries, worldWaters, isV
         ttTag.textContent = '';
       }
       const stageRect = stage.getBoundingClientRect();
-      tooltip.style.left = `${clientX - stageRect.left}px`;
+      const x = clientX - stageRect.left;
+      const halfW = tooltip.offsetWidth / 2;
+      const pad = 8;
+      const clampedX = Math.max(halfW + pad, Math.min(stageRect.width - halfW - pad, x));
+      tooltip.style.left = `${clampedX}px`;
       tooltip.style.top = `${clientY - stageRect.top}px`;
+      tooltip.style.setProperty('--arrow-offset', `${x - clampedX + halfW}px`);
       tooltip.classList.add('map_tooltip_visible');
     }
     function hideTooltip() {

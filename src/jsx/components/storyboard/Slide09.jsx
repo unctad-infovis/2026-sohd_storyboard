@@ -154,8 +154,13 @@ export default function Slide09({ url }) {
     tt.classList.remove('map_tooltip_ldc', 'map_tooltip_sids', 'map_tooltip_dual');
     tt.classList.add(`map_tooltip_${bubble.group}`);
     tag.textContent = bubble.group === 'dual' ? 'LDC + SIDS' : bubble.group.toUpperCase();
-    tt.style.left = `${clientX - rect.left}px`;
+    const x = clientX - rect.left;
+    const halfW = tt.offsetWidth / 2;
+    const pad = 8;
+    const clampedX = Math.max(halfW + pad, Math.min(rect.width - halfW - pad, x));
+    tt.style.left = `${clampedX}px`;
     tt.style.top = `${clientY - rect.top}px`;
+    tt.style.setProperty('--arrow-offset', `${x - clampedX + halfW}px`);
     tt.classList.add('map_tooltip_visible');
   }
 
@@ -228,12 +233,12 @@ export default function Slide09({ url }) {
                 return (
                   <g key={b.iso} transform={`translate(${b.x},${b.y})`}>
                     <circle
-                      r={r}
                       className={`bubble bubble_${b.group}`}
-                      style={{ opacity: animating ? 1 : 0, transform: animating ? 'scale(1)' : 'scale(0)', transition: `transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}ms, opacity 0.4s ease ${delay}ms` }}
                       onPointerEnter={e => showTooltip(b, e.clientX, e.clientY)}
-                      onPointerMove={e => showTooltip(b, e.clientX, e.clientY)}
                       onPointerLeave={hideTooltip}
+                      onPointerMove={e => showTooltip(b, e.clientX, e.clientY)}
+                      r={r}
+                      style={{ opacity: animating ? 1 : 0, transform: animating ? 'scale(1)' : 'scale(0)', transition: `transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}ms, opacity 0.4s ease ${delay}ms` }}
                     />
                   </g>
                 );
