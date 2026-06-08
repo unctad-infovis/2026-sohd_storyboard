@@ -19,7 +19,7 @@
     transform: translate(-50%, calc(-100% - 14px));
     transition: opacity 0.15s ease;
     white-space: nowrap;
-    z-index: 10;
+    z-index: 101;
     &.map_tooltip_visible {
       opacity: 1;
     }

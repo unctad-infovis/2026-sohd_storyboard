@@ -17,7 +17,6 @@ import ProgressBar from './components/general/ProgressBar.jsx';
 // Storyboard
 import Footer from './components/storyboard/Footer.jsx';
 import Header from './components/storyboard/Header.jsx';
-import SlideNav from './components/storyboard/SlideNav.jsx';
 import Slide01 from './components/storyboard/Slide01.jsx';
 import Slide02 from './components/storyboard/Slide02.jsx';
 import Slide03 from './components/storyboard/Slide03.jsx';
@@ -28,6 +27,7 @@ import Slide07 from './components/storyboard/Slide07.jsx';
 import Slide08 from './components/storyboard/Slide08.jsx';
 import Slide09 from './components/storyboard/Slide09.jsx';
 import Slide10 from './components/storyboard/Slide10.jsx';
+import SlideNav from './components/storyboard/SlideNav.jsx';
 
 import './../styles/styles.css';
 import './components/storyboard/Slide.css';
@@ -47,7 +47,8 @@ const components = {
   Slide07,
   Slide08,
   Slide09,
-  Slide10
+  Slide10,
+  SlideNav
 };
 
 const App = () => {
@@ -97,7 +98,6 @@ const App = () => {
       ref={appRef}
     >
       <Article components={components} meta={meta} />
-      <SlideNav />
     </div>
   );
 };
