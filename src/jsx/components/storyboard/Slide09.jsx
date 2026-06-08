@@ -254,7 +254,7 @@ export default function Slide09({ url }) {
           <div>
             Note:{' '}
             <a href="https://unctad.org/map-disclaimer" target="_blank" rel="noopener">
-              unctad.org/map-disclaimer
+              Map disclaimer
             </a>
           </div>
         </div>
