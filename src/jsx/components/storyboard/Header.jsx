@@ -8,7 +8,7 @@ export default function Header({ subtitle, title, url }) {
   };
 
   return (
-    <div className="header_container">
+    <div className="header_container" style={{ '--hero-bg-url': `url(${basePath()}assets/img/2026-sohd_storyboard_main.jpg)` }}>
       <div className="header_top">
         <a className="header_logo_link" href="https://unctad.org" rel="noopener" target="_blank">
           <img alt="UN Trade and Development" className="header_logo" src={`${basePath()}assets/img/2026-sohd_storyboard_unctad_logo_white.png`} />

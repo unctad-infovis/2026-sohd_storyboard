@@ -11,7 +11,7 @@
     background-color: #000000;
     z-index: 10;
     &:before {
-      background: url(./assets/img/2026-sohd_storyboard_main.jpg) center 60% / cover no-repeat;
+      background: var(--hero-bg-url) center 60% / cover no-repeat;
       content: '';
       filter: url(#hero-photo-grade) saturate(0.92) contrast(1.1) brightness(1.04);
       inset: 0;
