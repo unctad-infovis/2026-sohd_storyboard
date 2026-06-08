@@ -1,12 +1,11 @@
 #app-root-2026-sohd_storyboard .app {
   .slide_container.slide10 {
     .slide_content {
-      margin: 0 auto;
-      max-width: min(1000px, 92%);
+      max-width: min(1000px, 100%);
       .title_container {
-        max-width: min(1000px, 92%);
+        max-width: min(1000px, 100%);
         h3 {
-          max-width: min(1000px, 92%);
+          max-width: min(1000px, 100%);
         }
       }
       /* ── Implication cards grid ── */

@@ -2,7 +2,7 @@
   .slide_container.slide01 {
     .slide_content {
       h3 {
-        max-width: min(800px, 92%);
+        max-width: min(700px, 100%);
         text-align: center;
       }
     }

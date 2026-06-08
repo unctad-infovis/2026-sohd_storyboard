@@ -1,16 +1,15 @@
 #app-root-2026-sohd_storyboard .app {
   .slide_container.slide09 {
     .slide_content {
-      max-width: min(900px, 92%);
-      margin: auto auto;
+      max-width: min(1000px, 100%);
       .title_container {
-        max-width: min(900px, 92%);
+        max-width: min(1000px, 100%);
         h3 {
-          max-width: min(900px, 92%);
+          max-width: min(1000px, 100%);
         }
       }
       h4 {
-        max-width: min(900px, 92%);
+        max-width: min(1000px, 100%);
       }
       /* ── Legend — same style as Globe / Slide03 ── */
       .legend {

@@ -1,9 +1,7 @@
 #app-root-2026-sohd_storyboard .app {
   .slide_container.slide08 {
     .slide_content {
-      max-width: min(700px, 92%);
-      margin: auto auto;
-
+      max-width: min(700px, 100%);
       /* ── Rolling total ── */
       .total_container {
         padding-left: clamp(20px, 5vw, 50px);

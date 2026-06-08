@@ -1,8 +1,7 @@
 #app-root-2026-sohd_storyboard .app {
   .slide_container.slide06 {
     .slide_content {
-      max-width: min(600px, 92%);
-      margin: auto auto;
+      max-width: min(700px, 100%);
       .chart_meta {
         text-align: left;
       }
@@ -17,7 +16,6 @@
           }
         }
       }
-
       /* ── Chart ── */
       .chart_columns {
         margin: auto auto 20px auto;
