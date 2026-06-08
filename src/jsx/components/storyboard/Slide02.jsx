@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import CSVtoJSON from './../../helpers/CsvToJson';
+import loadFile from './../../helpers/LoadFile';
 import useIsVisible from './../../helpers/UseIsVisible';
 import ButtonShare from './../general/ButtonShare';
 import LineChart from './components/LineChart';
@@ -55,9 +56,11 @@ const Slide02 = ({ url }) => {
   const [rawCsv, setRawCsv] = useState(null);
 
   useEffect(() => {
-    fetch('/assets/data/2026-sohd_storyboard_slide02.csv')
-      .then(r => r.text())
-      .then(setRawCsv);
+    loadFile('assets/data/2026-sohd_storyboard_slide02.csv')
+      .then(r => r?.text())
+      .then(text => {
+        if (text) setRawCsv(text);
+      });
   }, []);
 
   const { chart1, chart2 } = useMemo(() => {

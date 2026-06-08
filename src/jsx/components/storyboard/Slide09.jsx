@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as topojson from 'topojson-client';
+import loadFile from '../../helpers/LoadFile';
 import useIsVisible from '../../helpers/UseIsVisible';
 import ButtonShare from './../general/ButtonShare';
 
@@ -79,7 +80,9 @@ export default function Slide09({ url }) {
   const ttRef = useRef(null);
 
   useEffect(() => {
-    Promise.all([fetch('/assets/data/world_topojson.json').then(r => r.json()), fetch('/assets/data/world_boundaries.json').then(r => r.json()), fetch('/assets/data/world_waters.json').then(r => r.json())]).then(([topo, bounds, waters]) => setGeoData({ topo, bounds, waters }));
+    Promise.all([loadFile('assets/data/world_topojson.json').then(r => r?.json()), loadFile('assets/data/world_boundaries.json').then(r => r?.json()), loadFile('assets/data/world_waters.json').then(r => r?.json())]).then(([topo, bounds, waters]) => {
+      if (topo && bounds && waters) setGeoData({ topo, bounds, waters });
+    });
   }, []);
 
   const computed = useMemo(() => {

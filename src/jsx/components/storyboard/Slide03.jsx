@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import loadFile from './../../helpers/LoadFile';
 import ButtonShare from './../general/ButtonShare';
 import Globe from './components/Globe';
 
@@ -12,10 +13,10 @@ export default function Slide03({ url }) {
   const ref = useRef(null);
 
   useEffect(() => {
-    Promise.all([fetch('/assets/data/world_topojson.json').then(r => r.json()), fetch('/assets/data/world_boundaries.json').then(r => r.json()), fetch('/assets/data/world_waters.json').then(r => r.json())]).then(([topo, bounds, waters]) => {
-      setWorldTopojson(topo);
-      setWorldBoundaries(bounds);
-      setWorldWaters(waters);
+    Promise.all([loadFile('assets/data/world_topojson.json').then(r => r?.json()), loadFile('assets/data/world_boundaries.json').then(r => r?.json()), loadFile('assets/data/world_waters.json').then(r => r?.json())]).then(([topo, bounds, waters]) => {
+      if (topo) setWorldTopojson(topo);
+      if (bounds) setWorldBoundaries(bounds);
+      if (waters) setWorldWaters(waters);
     });
   }, []);
 
