@@ -1,0 +1,141 @@
+#app-root-2026-sohd_storyboard .app {
+  .slide_container.slide04 {
+    .slide_content {
+      margin: auto auto;
+      max-width: min(600px, 92%);
+      h4 {
+        text-align: center;
+      }
+      .panels {
+        align-items: center;
+        display: flex;
+        gap: 64px;
+        justify-content: center;
+        margin: 0 auto;
+        .panel {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          /* ── Radial chart ── */
+          .radial_wrap {
+            position: relative;
+            width: 260px;
+            &:before {
+              background-color: #fff;
+              border-radius: 50%;
+              content: '';
+              height: calc(100% - 30px);
+              left: calc(50% - calc((100% - 30px) / 2));
+              position: absolute;
+              top: calc(50% - calc((100% - 30px) / 2));
+              width: calc(100% - 30px);
+            }
+            .radial_svg {
+              display: block;
+              filter: drop-shadow(0 4px 14px rgba(251, 175, 23, 0.3));
+              overflow: visible;
+              width: 100%;
+            }
+            .track {
+              stroke: var(--un-color-grey-light);
+            }
+            .fill {
+              stroke: var(--un-color-yellow);
+              stroke-linecap: round;
+              transition: stroke-dashoffset 1.2s cubic-bezier(0.25, 0, 0, 1);
+            }
+            .center {
+              align-items: center;
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              .big_number {
+                color: var(--un-color-blue-text);
+                font-size: var(--un-font-size-xxxxxl);
+                font-weight: var(--un-font-weight-bolder);
+                line-height: var(--un-line-height-smallest);
+              }
+              .economies {
+                color: var(--un-color-grey-text);
+                font-size: var(--un-font-size-xxxxs);
+                letter-spacing: 0.06em;
+                text-align: center;
+                text-transform: uppercase;
+              }
+            }
+          }
+          .caption {
+            color: var(--un-color-grey-dark);
+            font-size: var(--un-font-size-xs);
+            text-align: center;
+          }
+
+          /* ── Person stat ── */
+          .person {
+            color: var(--un-color-blue-text);
+            height: 90px;
+            width: auto;
+          }
+          .they {
+            color: var(--un-color-grey-text);
+            font-size: var(--un-font-size-xs);
+            line-height: var(--un-line-height-smallest);
+            margin: 0;
+            text-align: center;
+          }
+          .billion {
+            color: var(--un-color-blue-text);
+            font-size: var(--un-font-size-xxxxl);
+            font-weight: var(--un-font-weight-bolder);
+            line-height: var(--un-line-height-smallest);
+            margin: 0;
+            text-align: center;
+          }
+          .people {
+            color: var(--un-color-grey-text);
+            font-size: var(--un-font-size-xs);
+            line-height: var(--un-line-height-smallest);
+            margin: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    /* ── Responsive ── */
+
+    @media (max-width: 1024px) {
+      .slide_content {
+        max-width: 92%;
+        .panels {
+          margin-bottom: 20px;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      .slide_content {
+        .panels {
+          gap: 20px;
+          .panel {
+            .radial_wrap {
+              width: min(260px, 80vw);
+              .center {
+                .big_number {
+                  font-size: var(--un-font-size-xxxxl);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

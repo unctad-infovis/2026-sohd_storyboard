@@ -1,0 +1,146 @@
+#app-root-2026-sohd_storyboard .app {
+  .header_container {
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    padding: clamp(5px, 4vw, 40px);
+    position: relative;
+    background-color: #000000;
+    z-index: 10;
+    &:before {
+      background: url(./assets/img/2026-sohd_storyboard_main.jpg) center 60% / cover no-repeat;
+      content: '';
+      filter: url(#hero-photo-grade) saturate(0.92) contrast(1.1) brightness(1.04);
+      inset: 0;
+      position: absolute;
+      z-index: 0;
+    }
+    &:after {
+      background: linear-gradient(180deg, rgba(8, 16, 32, 0.82) 0%, rgba(8, 16, 32, 0.68) 18%, rgba(8, 16, 32, 0.48) 32%, rgba(8, 16, 32, 0.12) 55%, rgba(8, 16, 32, 0.06) 78%, rgba(247, 248, 250, 0.85) 92%, rgba(247, 248, 250, 1) 100%);
+      content: '';
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+    /* ── Logo bar ── */
+    .header_top {
+      align-items: flex-start;
+      display: flex;
+      flex: 0 0 auto;
+      position: relative;
+      z-index: 10;
+      .header_logo_link {
+        display: block;
+      }
+      .header_logo {
+        display: block;
+        height: auto;
+        width: 120px;
+      }
+    }
+    /* ── Title area — right-aligned, sits near top ── */
+    .header_hero {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      color: #fff;
+      justify-content: flex-start;
+      padding-top: 4vh;
+      position: relative;
+      z-index: 10;
+      .share_wrapper {
+        margin-bottom: 10px;
+      }
+      .header_title {
+        color: var(--un-color-yellow);
+        font-size: clamp(var(--un-font-size-title_end), 6.5vw, var(--un-font-size-title_start));
+        font-weight: var(--un-font-weight-boldest);
+        line-height: var(--un-line-height-smallest);
+        margin: 0;
+        max-width: min(1000px, 92%);
+        padding: 0;
+        text-align: right;
+        text-shadow:
+          0 2px 6px rgba(0, 0, 0, 0.85),
+          0 4px 18px rgba(0, 0, 0, 0.65),
+          0 0 40px rgba(0, 0, 0, 0.45);
+      }
+      .header_date,
+      .header_subtitle {
+        color: #fff;
+        font-size: clamp(18px, 2.4vw, 30px);
+        font-weight: var(--un-font-weight-bolder);
+        line-height: var(--un-line-height-xl);
+        margin: 12px 0 0;
+        padding: 0;
+        text-align: right;
+        text-shadow:
+          0 1px 4px rgba(0, 0, 0, 0.85),
+          0 2px 16px rgba(0, 0, 0, 0.7);
+      }
+      .header_subtitle {
+        color: #fff;
+        font-size: clamp(26px, 2.4vw, 30px);
+      }
+      .header_date {
+        color: var(--un-color-yellow);
+        font-size: clamp(18px, 1.8vw, 22px);
+      }
+    }
+    /* ── Scroll-down button ── */
+    .header_bottom {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex: 0 0 auto;
+      justify-content: center;
+      .header_scroll_btn {
+        align-items: center;
+        background: rgba(0, 0, 0, 0.95);
+        border: none;
+        border-radius: 50%;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        height: clamp(36px, 3.5vw, 44px);
+        justify-content: center;
+        transition: background 0.2s ease;
+        width: clamp(36px, 3.5vw, 44px);
+        &:hover {
+          background: rgba(0, 0, 0, 0.65);
+        }
+        svg {
+          height: clamp(18px, 1.8vw, 20px);
+          width: clamp(18px, 1.8vw, 20px);
+        }
+      }
+    }
+    /* ── Tablet (≤1024px) ── */
+    @media (max-width: 1024px) {
+      .header_hero {
+        padding-top: 3vh;
+      }
+    }
+    /* ── Mobile (≤600px) ── */
+    @media (max-width: 600px) {
+      .header_hero {
+        align-items: flex-start;
+        padding-top: 2vh;
+        .header_title,
+        .header_subtitle,
+        .header_date {
+          text-align: left;
+        }
+        .header_subtitle,
+        .header_date {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+#app-root-2026-sohd_storyboard .app {
+  .slide_container {
+    .slide_content {
+      .animated_text {
+        box-sizing: border-box;
+        font-size: clamp(var(--un-font-size-xxl), 4vw, var(--un-font-size-xxxl));
+        font-weight: var(--un-font-weight-bolder);
+        padding: 0 20px;
+        text-align: center;
+        /*
+          Word-reveal animation styles
+          ─────────────────────────────────────────────────────────────────────────────
+          Each word starts invisible (opacity 0, slight upward offset) and animates
+          in once its parent receives the .word--visible class via IntersectionObserver.
+
+          The delay is driven by the CSS custom property --word-delay, set inline
+          by AnimatedText.jsx based on word position.
+
+          Integration: import this file into your main stylesheet or component CSS.
+        */
+
+        /* Base state — words are invisible until triggered */
+        .word {
+          display: inline-block;
+          margin-right: 0.15em;
+          opacity: 0;
+          transform: translateY(0.25em);
+          transition:
+            opacity 0.4s ease var(--word-delay, 0ms),
+            transform 0.4s ease var(--word-delay, 0ms);
+        }
+        /* Spaces between words — always visible, no animation needed */
+        .word-space {
+          display: inline;
+          white-space: pre;
+        }
+        /* Triggered state — words animate in */
+        .word--visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        /* 
+          Highlight wrapper: the outer .word span handles the animation,
+          the inner .highlight span handles your color/style.
+          You control .highlight in your own stylesheet.
+        */
+        .word--highlight-wrapper {
+          /* no extra margin — the highlight span provides its own visual weight */
+          margin-right: 0;
+        }
+        .word--highlight-wrapper .highlight {
+          /* Your existing highlight styles go here, or keep them in your main CSS */
+          /* e.g.: color: var(--color-accent); */
+        }
+        /*
+          Reduced motion: respect user preference.
+          Words appear immediately without animation.
+        */
+        /*@media (prefers-reduced-motion: reduce) {
+          .word {
+            opacity: 1;
+            transform: none;
+            transition: none;
+          }
+        }*/
+      }
+    }
+  }
+}

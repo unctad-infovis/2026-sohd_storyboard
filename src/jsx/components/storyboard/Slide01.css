@@ -1,0 +1,10 @@
+#app-root-2026-sohd_storyboard .app {
+  .slide_container.slide01 {
+    .slide_content {
+      h3 {
+        max-width: min(800px, 92%);
+        text-align: center;
+      }
+    }
+  }
+}

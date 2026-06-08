@@ -1,0 +1,81 @@
+#app-root-2026-sohd_storyboard .app {
+  .slide_container.slide06 {
+    .slide_content {
+      max-width: min(600px, 92%);
+      margin: auto auto;
+      .chart_meta {
+        text-align: left;
+      }
+      /* ── Legend ── */
+      .legend {
+        .legend_item {
+          &.legend_sids .legend_swatch {
+            background: var(--un-color-yellow);
+          }
+          &.legend_ldc .legend_swatch {
+            background: var(--un-color-blue);
+          }
+        }
+      }
+
+      /* ── Chart ── */
+      .chart_columns {
+        margin: auto auto 20px auto;
+        .bar_row {
+          align-items: center;
+          display: flex;
+          gap: 10px;
+          padding: 4px 0;
+          .country {
+            align-items: center;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            width: clamp(120px, 33vw, 200px);
+            .country_name {
+              color: var(--un-color-grey-dark);
+              font-size: var(--un-font-size-xxs);
+              font-weight: var(--un-font-weight-normal);
+              line-height: var(--un-line-height-smallest);
+              text-align: right;
+            }
+            img {
+              height: 26px;
+              width: 26px;
+            }
+          }
+          .bar_track {
+            background: var(--un-color-grey-lighest);
+            border-radius: 3px;
+            flex: 1;
+            height: 20px;
+            overflow: hidden;
+            .bar {
+              border-radius: 3px;
+              height: 100%;
+              width: 0%;
+              &.bar_sids {
+                background: var(--un-color-yellow);
+              }
+              &.bar_ldc {
+                background: var(--un-color-blue);
+              }
+            }
+          }
+          .bar_value {
+            flex-shrink: 0;
+            font-size: var(--un-font-size-xxs);
+            font-weight: var(--un-font-weight-bold);
+            min-width: 44px;
+            &.val_sids {
+              color: var(--un-color-yellow-dark);
+            }
+            &.val_ldc {
+              color: var(--un-color-blue-text);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+#app-root-2026-sohd_storyboard .app {
+  .slide_container.slide03 {
+    .globe_stage {
+      aspect-ratio: 1;
+      cursor: grab;
+      margin: 0 auto;
+      max-width: min(80vmin, 560px);
+      position: relative;
+      touch-action: none;
+      width: 100%;
+      &.globe_stage_dragging {
+        cursor: grabbing;
+      }
+    }
+    .globe_canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    /* ── Legend ── */
+    .legend {
+      .legend_item {
+        &.legend_item_ldc .legend_dot {
+          background: var(--un-color-blue);
+        }
+        &.legend_item_sids .legend_dot {
+          background: var(--un-color-yellow);
+        }
+        &.legend_item_dual .legend_dot {
+          background: linear-gradient(90deg, var(--un-color-blue) 0%, var(--un-color-blue) 50%, var(--un-color-yellow) 50%, var(--un-color-yellow) 100%);
+        }
+      }
+    }
+  }
+}

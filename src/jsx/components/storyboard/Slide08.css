@@ -1,0 +1,91 @@
+#app-root-2026-sohd_storyboard .app {
+  .slide_container.slide08 {
+    .slide_content {
+      max-width: min(700px, 92%);
+      margin: auto auto;
+
+      /* ── Rolling total ── */
+      .total_container {
+        padding-left: clamp(20px, 5vw, 50px);
+        .total_pre_text {
+          color: var(--un-color-grey-darkest);
+          font-size: var(--un-font-size-xl);
+          font-weight: var(--un-font-weight-normal);
+        }
+        .total_display {
+          align-items: baseline;
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+          .total_prefix {
+            color: var(--un-color-blue);
+            font-size: clamp(var(--un-font-size-xxl), 5vw, var(--un-font-size-xxxl));
+            font-weight: var(--un-font-weight-bolder);
+            line-height: var(--un-line-height-smallest);
+          }
+          .total_number {
+            color: var(--un-color-blue);
+            font-size: clamp(var(--un-font-size-xxxl), 8vw, var(--un-font-size-xxxxl));
+            font-weight: var(--un-font-weight-boldest);
+            line-height: var(--un-line-height-smallest);
+          }
+          .total_suffix {
+            color: var(--un-color-grey-darkest);
+            font-size: var(--un-font-size-xl);
+            font-weight: var(--un-font-weight-normal);
+            white-space: nowrap;
+          }
+        }
+      }
+
+      /* ── Legend ── */
+      .legend {
+        .legend_ldc .legend_swatch {
+          background: var(--un-color-blue);
+        }
+        .legend_sids .legend_swatch {
+          background: var(--un-color-yellow);
+        }
+      }
+
+      /* ── Stacked bar ── */
+      .bar_container {
+        margin: auto auto 20px auto;
+        max-width: min(600px, 92%);
+        .stacked_bar {
+          border-radius: 6px;
+          display: flex;
+          height: 64px;
+          overflow: hidden;
+          transition: width 1.2s cubic-bezier(0.25, 0, 0, 1);
+          .segment {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            .seg_label {
+              font-size: var(--un-font-size-xs);
+              font-weight: var(--un-font-weight-bolder);
+              transition: opacity 0.4s ease 1.2s;
+              white-space: nowrap;
+            }
+            &.seg_ldc {
+              background: var(--un-color-blue);
+              flex: 16.1;
+              .seg_label {
+                color: #fff;
+              }
+            }
+            &.seg_sids {
+              background: var(--un-color-yellow);
+              flex: 4.3;
+              .seg_label {
+                color: var(--un-color-grey-darkest);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+#app-root-2026-sohd_storyboard .app {
+  .slide_container.slide09 {
+    .slide_content {
+      max-width: min(900px, 92%);
+      margin: auto auto;
+      .title_container {
+        max-width: min(900px, 92%);
+        h3 {
+          max-width: min(900px, 92%);
+        }
+      }
+      h4 {
+        max-width: min(900px, 92%);
+      }
+      /* ── Legend — same style as Globe / Slide03 ── */
+      .legend {
+        .legend_item_ldc .legend_dot {
+          background: var(--un-color-blue);
+        }
+        .legend_item_sids .legend_dot {
+          background: var(--un-color-yellow);
+        }
+        .legend_item_dual .legend_dot {
+          background: linear-gradient(90deg, var(--un-color-blue) 0%, var(--un-color-blue) 50%, var(--un-color-yellow) 50%, var(--un-color-yellow) 100%);
+        }
+      }
+
+      /* ── Map ── */
+      .map_container {
+        position: relative;
+        width: 100%;
+        .bubble_map {
+          display: block;
+          height: auto;
+          width: 100%;
+          .country_path {
+            fill: #d6dae3;
+          }
+          .water_path {
+            fill: var(--un-color-blue-lightest);
+            stroke-width: 0.3px;
+            stroke: rgba(0, 0, 0, 0.08);
+          }
+          .border_solid {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1px;
+            stroke: rgba(255, 255, 255, 0.55);
+          }
+          .border_dashed {
+            fill: none;
+            stroke-dasharray: 2 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1px;
+            stroke: rgba(255, 255, 255, 0.55);
+          }
+          .bubble {
+            cursor: pointer;
+            stroke-opacity: 1;
+            stroke-width: 1;
+            transform-box: fill-box;
+            transform-origin: center;
+            &.bubble_ldc {
+              fill-opacity: 0.5;
+              fill: var(--un-color-blue);
+              stroke: var(--un-color-blue);
+            }
+            &.bubble_sids {
+              fill-opacity: 0.5;
+              fill: var(--un-color-yellow);
+              stroke: var(--un-color-yellow);
+            }
+            &.bubble_dual {
+              fill-opacity: 0.8;
+              fill: url(#stripe_dual_09);
+              stroke: var(--un-color-blue);
+            }
+          }
+        }
+      }
+    }
+  }
+}
