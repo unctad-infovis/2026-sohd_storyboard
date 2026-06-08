@@ -3,7 +3,7 @@ import './Footer.css';
 
 export default function Footer({ full_report_url, more_reports_url }) {
   return (
-    <div className="footer_container">
+    <div className="footer_container" style={{ '--footer-bg-url': `url(${basePath()}assets/img/2026-sohd_storyboard_main.jpg)` }}>
       <div className="footer_content">
         <div className="footer_quote_section">
           <div className="footer_photo_wrap">
