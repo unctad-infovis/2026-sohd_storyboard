@@ -149,7 +149,7 @@ export default function Slide09({ url }) {
     if (!tt || !container) return;
     const rect = container.getBoundingClientRect();
     tt.querySelector('.map_tooltip_name').textContent = bubble.name;
-    tt.querySelector('.map_tooltip_value').textContent = `· ${bubble.value.toFixed(1)}% of GDP`;
+    tt.querySelector('.map_tooltip_value').textContent = `${bubble.value.toFixed(1)}% of GDP`;
     const tag = tt.querySelector('.map_tooltip_tag');
     tt.classList.remove('map_tooltip_ldc', 'map_tooltip_sids', 'map_tooltip_dual');
     tt.classList.add(`map_tooltip_${bubble.group}`);
@@ -172,7 +172,7 @@ export default function Slide09({ url }) {
     <div className="slide_container slide09">
       <div className="slide_content" ref={ref}>
         <div className="title_container with_arrow">
-          <ButtonShare url={url} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconColor="#fff" size={30} showLabel={false} />
+          <ButtonShare url={url} defaultOpen position="static" iconBg="#fff" iconHoverBg="#009edb" iconColor="#000" iconHoverColor="#fff" size={30} showLabel={false} />
           <div className="with_arrow">
             <h3>
               <div>
@@ -246,18 +246,21 @@ export default function Slide09({ url }) {
             </g>
           </svg>
           <div className="map_tooltip" ref={ttRef} aria-hidden="true">
-            <span className="map_tooltip_tag" />
-            <span className="map_tooltip_name" />
-            <span className="map_tooltip_value" />
+            <div className="map_tooltip_line">
+              <span className="map_tooltip_tag" />
+              <span className="map_tooltip_name" />
+            </div>
+            <div className="map_tooltip_line">
+              <span className="map_tooltip_value" />
+            </div>
           </div>
         </div>
-
         <div className="chart_meta">
           <div className="source">
             <span className="label">Source:</span> UN Trade and Development (UNCTAD), based on UN Comtrade. Figures for LDCs and SIDS that are net importers of crude or refined oil products, excluding Singapore.
           </div>
-          <div>
-            Note:{' '}
+          <div className="note">
+            <span className="label">Note:</span>{' '}
             <a href="https://unctad.org/map-disclaimer" target="_blank" rel="noopener">
               Map disclaimer
             </a>

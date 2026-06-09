@@ -3,7 +3,7 @@
     .globe_stage {
       aspect-ratio: 1;
       cursor: grab;
-      margin: 0 auto;
+      margin: 0 auto 20px auto;
       max-width: min(80vmin, 560px);
       position: relative;
       touch-action: none;

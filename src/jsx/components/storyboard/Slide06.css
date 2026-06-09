@@ -1,9 +1,14 @@
 #app-root-2026-sohd_storyboard .app {
   .slide_container.slide06 {
     .slide_content {
-      max-width: min(700px, 100%);
-      .chart_meta {
-        text-align: left;
+      max-width: min(800px, 100%);
+      .title_container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: min(800px, 100%);
+        h3 {
+          max-width: min(800px, 100%);
+        }
       }
       /* ── Legend ── */
       .legend {
@@ -29,7 +34,13 @@
             display: flex;
             gap: 10px;
             justify-content: flex-end;
-            width: clamp(120px, 33vw, 200px);
+            width: 220px;
+            @media (max-width: 600px) {
+              width: 140px;
+            }
+            @media (max-width: 600px) {
+              width: 110px;
+            }
             .country_name {
               color: var(--un-color-grey-dark);
               font-size: var(--un-font-size-xxs);

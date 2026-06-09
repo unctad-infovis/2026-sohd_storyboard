@@ -33,14 +33,19 @@ export default function Slide03({ url }) {
       <div className="slide_content" ref={ref}>
         <div className="title_container">
           <div className="share_container">
-            <ButtonShare url={url} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconColor="#fff" size={30} showLabel={false} />
+            <ButtonShare url={url} defaultOpen position="static" iconBg="#fff" iconHoverBg="#009edb" iconColor="#000" iconHoverColor="#fff" size={30} showLabel={false} />
           </div>
           <h3>
             <div>
-              These shocks fall hardest on the <span className="accent accent_ldc">Least Developed Countries</span> and <span className="accent accent_sids">Small island developing States</span>.
+              Hitting hard the world's most vulnerable economies:
+              <br />
+              <span className="accent accent_ldc">the least developed countries</span> and <span className="accent accent_sids">small island developing States</span>
             </div>
           </h3>
         </div>
+
+        {worldTopojson ? <Globe worldTopojson={worldTopojson} worldBoundaries={worldBoundaries} worldWaters={worldWaters} isVisible={isVisible} /> : <div className="globe_loading" />}
+
         <div className="legend">
           <span className="legend_item legend_item_ldc">
             <span className="legend_dot"></span>Least developed countries
@@ -53,13 +58,13 @@ export default function Slide03({ url }) {
           </span>
         </div>
 
-        {worldTopojson ? <Globe worldTopojson={worldTopojson} worldBoundaries={worldBoundaries} worldWaters={worldWaters} isVisible={isVisible} /> : <div className="globe_loading" />}
-
         <div className="chart_meta">
-          <span className="label">Note:</span>{' '}
-          <a href="https://unctad.org/map-disclaimer" target="_blank" rel="noopener">
-            Map disclaimer
-          </a>
+          <div className="note">
+            <span className="label">Note:</span>{' '}
+            <a href="https://unctad.org/map-disclaimer" target="_blank" rel="noopener">
+              Map disclaimer
+            </a>
+          </div>
         </div>
       </div>
     </div>

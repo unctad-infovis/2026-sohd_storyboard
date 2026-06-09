@@ -10,7 +10,7 @@ const Slide = () => {
     <div className="slide_container slide07">
       <div className="slide_content" ref={ref}>
         <h3>
-          <AnimatedText isVisible={isVisible}>
+          <AnimatedText isVisible={isVisible} wordDelay={150}>
             But the shock goes beyond geographic proximity. <span className="accent">It travels far through prices.</span>
           </AnimatedText>
         </h3>

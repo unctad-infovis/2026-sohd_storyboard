@@ -76,7 +76,7 @@ const Slide02 = ({ url }) => {
     <div className="slide_container slide02">
       <div className="slide_content" ref={ref}>
         <div className="title_container with_arrow">
-          <ButtonShare url={url} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconColor="#fff" size={30} showLabel={false} />
+          <ButtonShare url={url} defaultOpen position="static" iconBg="#fff" iconHoverBg="#009edb" iconColor="#000" iconHoverColor="#fff" size={30} showLabel={false} />
           <div className="with_arrow">
             <h3>
               <div>
@@ -106,6 +106,14 @@ const Slide02 = ({ url }) => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="chart_meta">
+          <div className="source">
+            <span className="label">Source:</span> UN Trade and Development (UNCTAD), based on LSEG Data & Analytics.
+          </div>
+          <div className="note">
+            <span className="label">Note:</span> Price increases compare average prices for the period 1 January 2024 – 27 February 2026 with prices during the period following the military escalation, 28 February 2026 – 28 May 2026.
+          </div>
         </div>
       </div>
     </div>

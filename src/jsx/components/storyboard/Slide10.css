@@ -2,6 +2,9 @@
   .slide_container.slide10 {
     .slide_content {
       max-width: min(1000px, 100%);
+      h3 {
+        max-width: min(800px, 100%);
+      }
       .title_container {
         max-width: min(1000px, 100%);
         h3 {

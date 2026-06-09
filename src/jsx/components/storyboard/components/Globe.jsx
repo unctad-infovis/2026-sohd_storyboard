@@ -60,13 +60,13 @@ export default function Globe({ worldTopojson, worldBoundaries, worldWaters, isV
     const blue_lightest = cs.getPropertyValue('--un-color-blue-lightest').trim();
     const yellow = cs.getPropertyValue('--un-color-yellow').trim();
 
+    const OCEAN_ALPHA = 0.5; // ocean gradient opacity (0–1)
+    const WATER_ALPHA = 0.5; // inland water bodies opacity (0–1)
+
     // Ocean radial gradient (matches SVG cx=34% cy=30% r=78% on 600×600)
     const oceanGrad = ctx.createRadialGradient(250, 250, 0, 300, 300, 280);
     oceanGrad.addColorStop(0, blue_lightest);
-    oceanGrad.addColorStop(0.1, blue_lightest);
-    oceanGrad.addColorStop(0.5, blue_lightest);
     oceanGrad.addColorStop(0.85, blue_lightest);
-    oceanGrad.addColorStop(0.99, blue_light);
     oceanGrad.addColorStop(1, blue_light);
 
     // Diagonal stripe pattern for LDC+SIDS dual countries
@@ -145,6 +145,7 @@ export default function Globe({ worldTopojson, worldBoundaries, worldWaters, isV
 
       // 1. Ocean sphere with drop shadow
       ctx.save();
+      ctx.globalAlpha = OCEAN_ALPHA;
       ctx.shadowColor = 'rgba(10, 30, 10, 0.1)';
       ctx.shadowBlur = 10;
       ctx.shadowOffsetY = 14;
@@ -182,6 +183,8 @@ export default function Globe({ worldTopojson, worldBoundaries, worldWaters, isV
 
       // 4. Inland waters — bounds check
       if (waters && isBoundsOk(waters)) {
+        ctx.save();
+        ctx.globalAlpha = WATER_ALPHA;
         ctx.beginPath();
         path(waters);
         ctx.fillStyle = blue_lightest;
@@ -189,6 +192,7 @@ export default function Globe({ worldTopojson, worldBoundaries, worldWaters, isV
         ctx.strokeStyle = 'rgba(0, 0, 0, 0.08)';
         ctx.lineWidth = 0.3;
         ctx.stroke();
+        ctx.restore();
       }
 
       // 5. Borders — solid: bounds check rejects degenerate D3 clip paths
@@ -445,8 +449,10 @@ export default function Globe({ worldTopojson, worldBoundaries, worldWaters, isV
     <div className="globe_stage" ref={stageRef}>
       <canvas ref={canvasRef} className="globe_canvas" aria-label="Rotating world map highlighting Least Developed Countries and Small Island Developing States" />
       <div className="map_tooltip" ref={ttRef} aria-hidden="true">
-        <span className="map_tooltip_tag"></span>
-        <span className="map_tooltip_name"></span>
+        <div className="map_tooltip_line">
+          <span className="map_tooltip_tag"></span>
+          <span className="map_tooltip_name"></span>
+        </div>
       </div>
     </div>
   );

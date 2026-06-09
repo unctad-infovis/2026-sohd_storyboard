@@ -35,7 +35,7 @@
     box-sizing: border-box;
     display: flex;
     min-height: 100vh;
-    padding: clamp(60px, 15vw, 200px) 20px;
+    padding: 20px 20px;
     padding-right: 50px;
     vertical-align: middle;
     .slide_content {
@@ -60,25 +60,26 @@
       }
       .title_container {
         margin: auto auto 30px auto;
-        max-width: min(700px, 92%);
+        max-width: min(700px, 100%);
         .with_arrow {
           position: relative;
           h3 {
-            padding-left: 50px;
+            padding-left: 45px;
           }
           &:before {
             background-color: var(--un-color-blue);
             content: '';
             display: block;
-            height: 100%;
+            height: 35px;
+            top: 2px;
             mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
             position: absolute;
-            width: 40px;
+            width: 35px;
           }
         }
         &.with_arrow {
           h4 {
-            padding-left: 50px;
+            padding-left: 45px;
           }
         }
       }
@@ -101,10 +102,10 @@
         .legend_item {
           align-items: center;
           display: flex;
+          /*box-shadow: 0 1px 4px rgba(10, 30, 60, 0.18);*/
           gap: 10px;
           .legend_dot {
             border-radius: 50%;
-            box-shadow: 0 1px 4px rgba(10, 30, 60, 0.18);
             display: inline-block;
             flex: 0 0 auto;
             height: 16px;
@@ -112,7 +113,6 @@
           }
           .legend_swatch {
             border-radius: 2px;
-            box-shadow: 0 1px 4px rgba(10, 30, 60, 0.18);
             display: inline-block;
             flex-shrink: 0;
             height: 16px;
@@ -129,7 +129,8 @@
         font-weight: var(--un-font-weight-light);
         line-height: var(--un-line-height-xl);
         text-align: left;
-        .source {
+        .source,
+        .note {
           margin-bottom: 5px;
           .label {
             font-style: italic;

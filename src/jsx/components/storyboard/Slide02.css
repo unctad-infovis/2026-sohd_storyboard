@@ -16,6 +16,7 @@
       display: flex;
       gap: 2rem;
       width: 100%;
+      margin-bottom: 20px;
       .chart_container {
         background-color: #fff;
         display: flex;

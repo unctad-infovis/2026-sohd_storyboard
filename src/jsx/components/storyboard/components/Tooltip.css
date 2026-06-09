@@ -5,7 +5,8 @@
     border-radius: 6px;
     box-shadow: 0 6px 18px rgba(10, 30, 60, 0.3);
     color: #fff;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     font-size: var(--un-font-size-xs);
     font-weight: var(--un-font-weight-bold);
     gap: 10px;
@@ -32,20 +33,29 @@
       top: 100%;
       transform: translateX(-50%);
     }
-    .map_tooltip_tag {
-      background: rgba(255, 255, 255, 0.14);
-      border-radius: 3px;
-      color: #fff;
-      font-size: var(--un-font-size-xxs);
-      font-weight: var(--un-font-weight-bolder);
-      letter-spacing: 0.08em;
-      padding: 2px 6px;
-      text-transform: uppercase;
-    }
-    .map_tooltip_value {
-      color: var(--un-color-grey);
-      font-size: var(--un-font-size-xxs);
-      font-weight: var(--un-font-weight-normal);
+    .map_tooltip_line {
+      display: inline-flex;
+      gap: 10px;
+      .map_tooltip_tag {
+        background: rgba(255, 255, 255, 0.14);
+        border-radius: 3px;
+        color: #fff;
+        text-align: center;
+        display: inline-block;
+        font-size: var(--un-font-size-xxs);
+        font-weight: var(--un-font-weight-bolder);
+        letter-spacing: 0.08em;
+        padding: 2px 6px;
+        text-transform: uppercase;
+      }
+      .map_tooltip_name {
+        color: var(--un-color-grey-lightest);
+      }
+      .map_tooltip_value {
+        color: var(--un-color-white);
+        font-size: var(--un-font-size-normal);
+        font-weight: var(--un-font-weight-bold);
+      }
     }
     &.map_tooltip_ldc .map_tooltip_tag {
       background: var(--un-color-blue);

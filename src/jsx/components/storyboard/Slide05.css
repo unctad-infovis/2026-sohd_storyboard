@@ -1,7 +1,19 @@
 #app-root-2026-sohd_storyboard .app {
   .slide_container.slide05 {
     .slide_content {
-      max-width: min(700px, 100%);
+      max-width: min(850px, 100%);
+      .title_container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: min(850px, 100%);
+        h3 {
+          max-width: min(850px, 100%);
+        }
+      }
+      .visualisation_container {
+        max-width: 700px;
+        margin: auto auto;
+      }
       .panels {
         align-items: flex-end;
         display: flex;
@@ -26,7 +38,7 @@
               color: var(--un-color-yellow);
             }
             &.pct_refined {
-              font-size: clamp(var(--un-font-size-xxl), 6vw, var(--un-font-size-xxxxl));
+              font-size: clamp(var(--un-font-size-xxl), 6vw, var(--un-font-size-xxxl));
               color: var(--un-color-blue);
             }
           }
@@ -36,7 +48,8 @@
             flex-direction: row;
             .icon {
               display: block;
-              transition: height 1.2s cubic-bezier(0.25, 0, 0, 1);
+              /*transition: height 1.2s cubic-bezier(0.25, 0, 0, 1);*/
+              transition: opacity 1.2s cubic-bezier(0.25, 0, 0, 1) 0.1s;
               width: auto;
               &.icon_crude {
                 color: var(--un-color-yellow);

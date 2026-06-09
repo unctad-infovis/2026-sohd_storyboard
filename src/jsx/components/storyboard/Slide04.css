@@ -10,7 +10,7 @@
         display: flex;
         gap: 64px;
         justify-content: center;
-        margin: 0 auto;
+        margin: 0 auto 20px auto;
         .panel {
           align-items: center;
           display: flex;
@@ -19,11 +19,12 @@
           /* ── Radial chart ── */
           .radial_wrap {
             position: relative;
-            width: 260px;
+            width: 300px;
             &:before {
               background-color: #fff;
               border-radius: 50%;
               content: '';
+              display: none;
               height: calc(100% - 30px);
               left: calc(50% - calc((100% - 30px) / 2));
               position: absolute;
@@ -32,7 +33,7 @@
             }
             .radial_svg {
               display: block;
-              filter: drop-shadow(0 4px 14px rgba(251, 175, 23, 0.3));
+              /*filter: drop-shadow(0 4px 14px rgba(251, 175, 23, 0.3));*/
               overflow: visible;
               width: 100%;
             }
@@ -55,13 +56,13 @@
               transform: translate(-50%, -50%);
               .big_number {
                 color: var(--un-color-blue-text);
-                font-size: var(--un-font-size-xxxxxl);
+                font-size: var(--un-font-size-title_start);
                 font-weight: var(--un-font-weight-bolder);
                 line-height: var(--un-line-height-smallest);
               }
               .economies {
-                color: var(--un-color-grey-text);
-                font-size: var(--un-font-size-xxxxs);
+                color: var(--un-color-grey-darkest);
+                font-size: var(--un-font-size-xxxs);
                 letter-spacing: 0.06em;
                 text-align: center;
                 text-transform: uppercase;
@@ -69,35 +70,38 @@
             }
           }
           .caption {
-            color: var(--un-color-grey-dark);
-            font-size: var(--un-font-size-xs);
+            color: var(--un-color-grey-darkest);
+            font-size: var(--un-font-size-normal);
             text-align: center;
           }
 
           /* ── Person stat ── */
           .person {
-            color: var(--un-color-blue-text);
-            height: 90px;
+            color: var(--un-color-blue);
+            height: 120px;
             width: auto;
           }
           .they {
-            color: var(--un-color-grey-text);
-            font-size: var(--un-font-size-xs);
+            color: var(--un-color-grey-darkest);
+            font-size: var(--un-font-size-normal);
             line-height: var(--un-line-height-smallest);
             margin: 0;
             text-align: center;
           }
           .billion {
             color: var(--un-color-blue-text);
-            font-size: var(--un-font-size-xxxxl);
+            font-feature-settings: 'tnum';
+            font-size: var(--un-font-size-xxxxxl);
             font-weight: var(--un-font-weight-bolder);
             line-height: var(--un-line-height-smallest);
             margin: 0;
+            max-width: 300px;
             text-align: center;
           }
           .people {
-            color: var(--un-color-grey-text);
-            font-size: var(--un-font-size-xs);
+            color: var(--un-color-grey-darkest);
+            font-size: var(--un-font-size-xxl);
+            font-weight: var(--un-font-weight-semibold);
             line-height: var(--un-line-height-smallest);
             margin: 0;
             text-align: center;

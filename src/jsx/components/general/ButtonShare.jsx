@@ -66,7 +66,7 @@ function popupSpecs() {
   return `top=${window.screen.height / 2 - 210},left=${window.screen.width / 2 - 275},width=550,height=420`;
 }
 
-function ButtonShare({ url, defaultOpen = false, position = 'absolute', iconBg = 'rgba(0,0,0,0.45)', iconHoverBg = 'rgba(0,0,0,1)', iconColor = '#fff', borderRadius = '50%', size = 36, showLabel = true, networks = ['facebook', 'x', 'linkedin', 'whatsapp', 'email', 'link'] }) {
+function ButtonShare({ url, defaultOpen = false, position = 'absolute', iconBg = 'rgba(0,0,0,0.45)', iconHoverBg = 'rgba(0,0,0,1)', iconColor = '#fff', iconHoverColor = null, borderRadius = '50%', size = 36, showLabel = true, networks = ['facebook', 'x', 'linkedin', 'whatsapp', 'email', 'link'] }) {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [hoveredKey, setHoveredKey] = useState(null);
@@ -74,7 +74,7 @@ function ButtonShare({ url, defaultOpen = false, position = 'absolute', iconBg =
   const btnStyle = key => ({
     backgroundColor: hoveredKey === key && iconHoverBg != null ? iconHoverBg : iconBg,
     borderRadius,
-    color: iconColor,
+    color: hoveredKey === key && iconHoverColor != null ? iconHoverColor : iconColor,
     height: size,
     width: size
   });

@@ -10,7 +10,7 @@ const Slide = () => {
     <div className="slide_container slide01">
       <div className="slide_content" ref={ref}>
         <h3>
-          <AnimatedText isVisible={isVisible}>
+          <AnimatedText isVisible={isVisible} wordDelay={150}>
             Disruptions in the Strait of Hormuz are sending shockwaves through the <span className="accent">global energy system</span>.
           </AnimatedText>
         </h3>

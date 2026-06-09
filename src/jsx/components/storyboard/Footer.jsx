@@ -11,7 +11,7 @@ export default function Footer({ full_report_url, more_reports_url }) {
           </div>
           <div className="footer_quote_wrap">
             <div className="footer_quote_mark">&ldquo;</div>
-            <blockquote className="footer_quote">&ldquo;When the Strait of Hormuz is strangled, the world&rsquo;s poorest and most vulnerable cannot breathe&rdquo;</blockquote>
+            <blockquote className="footer_quote">When the Strait of Hormuz is strangled, the world&rsquo;s poorest and most vulnerable cannot breathe.</blockquote>
             <div className="footer_attribution">
               <span className="footer_name">António Guterres</span>
               <span className="footer_role">Secretary-General of the United Nations</span>

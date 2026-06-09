@@ -64,7 +64,7 @@
     }
     /* Blue solid progress line — from top down to active dot */
     &::after {
-      background: var(--un-color-blue);
+      background: linear-gradient(180deg, rgba(0, 158, 219, 0) 0%, var(--un-color-blue) 35%, var(--un-color-blue) 100%);
       content: '';
       height: calc(var(--progress, 0) * 100%);
       left: 50%;

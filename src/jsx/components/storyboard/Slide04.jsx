@@ -17,7 +17,7 @@ export default function Slide04({ url }) {
     <div className="slide_container slide04">
       <div className="slide_content" ref={ref}>
         <div className="title_container with_arrow">
-          <ButtonShare url={url} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconColor="#fff" size={30} showLabel={false} />
+          <ButtonShare url={url} defaultOpen position="static" iconBg="#fff" iconHoverBg="#009edb" iconColor="#000" iconHoverColor="#fff" size={30} showLabel={false} />
           <div className="with_arrow">
             <h3>
               <div>
@@ -57,13 +57,9 @@ export default function Slide04({ url }) {
             <p className="people">people</p>
           </div>
         </div>
-
         <div className="chart_meta">
           <div className="source">
             <span className="label">Source:</span> UN Trade and Development (UNCTAD), based on UN Comtrade, and UNCTADStat.
-          </div>
-          <div>
-            <span className="label">Note:</span> Figures correspond to the 65 net oil-importing vulnerable economies, excluding Singapore.
           </div>
         </div>
       </div>

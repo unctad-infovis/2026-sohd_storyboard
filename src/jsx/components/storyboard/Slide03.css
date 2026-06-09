@@ -1,8 +1,8 @@
 #app-root-2026-sohd_storyboard .app {
   .slide_container.slide03 {
     .slide_content {
-      max-width: min(1000px, 100%);
       .title_container {
+        max-width: min(1000px, 100%);
         .share_container {
           text-align: center;
         }
