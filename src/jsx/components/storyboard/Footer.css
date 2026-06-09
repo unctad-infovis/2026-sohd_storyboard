@@ -3,7 +3,7 @@
     align-items: center;
     box-sizing: border-box;
     display: flex;
-    min-height: 100dvh;
+    min-height: calc(100svh + 80px);
     justify-content: center;
     position: relative;
     z-index: 2;

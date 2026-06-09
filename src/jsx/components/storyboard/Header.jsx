@@ -21,7 +21,7 @@ export default function Header({ full_report_url, subtitle, title, url }) {
             <svg aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24">
               <path d="M12 3v12m-5-5 5 5 5-5M5 21h14" />
             </svg>
-            Download the full report (PDF)
+            Download the report (PDF)
           </a>
           <p className="header_date">June 2026</p>
         </div>

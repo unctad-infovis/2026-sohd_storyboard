@@ -23,7 +23,7 @@ export default function Footer({ full_report_url, more_reports_url }) {
             <svg aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24">
               <path d="M12 3v12m-5-5 5 5 5-5M5 21h14" />
             </svg>
-            Download the full report (PDF)
+            Download the report (PDF)
           </a>
           <a className="footer_more_link" href={more_reports_url} rel="noopener" target="_blank">
             More UNCTAD publications on the Strait of Hormuz

@@ -141,10 +141,18 @@
               width: min(260px, 80vw);
               .center {
                 .big_number {
-                  font-size: var(--un-font-size-xxxxl);
+                  font-size: var(--un-font-size-xxxxxl);
                 }
               }
             }
+            .billion {
+              font-size: var(--un-font-size-xxxxl);
+            }
+          }
+        }
+        .title_container {
+          h3 {
+            text-align: left;
           }
         }
       }

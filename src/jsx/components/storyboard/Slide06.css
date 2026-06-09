@@ -22,7 +22,7 @@
       }
       /* ── Chart ── */
       .chart_columns {
-        padding-right: 50px;
+        padding-right: 60px;
         margin: auto auto 20px auto;
         .bar_row {
           align-items: center;

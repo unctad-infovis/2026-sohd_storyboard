@@ -9,6 +9,8 @@ const useIsVisible = (threshold = 0.3) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
+  threshold = window.innerWidth < 600 ? 0.3 : window.innerWidth < 800 ? 0.6 : threshold;
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
