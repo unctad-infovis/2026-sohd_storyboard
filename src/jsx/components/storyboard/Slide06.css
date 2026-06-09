@@ -54,7 +54,8 @@
             }
           }
           .bar_track {
-            background: var(--un-color-grey-lightest);
+            /*background: var(--un-color-grey-lightest);*/
+            background: transparent;
             border-radius: 3px;
             flex: 1;
             height: 20px;
