@@ -79,6 +79,10 @@
           }
         }
       }
+      .chart_meta {
+        margin: auto auto;
+        max-width: min(800px, 100%);
+      }
     }
   }
 }

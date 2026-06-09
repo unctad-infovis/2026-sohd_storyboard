@@ -84,7 +84,7 @@
           }
           &.annotation_container_2 {
             .value {
-              color: var(--un-color-blue);
+              color: var(--un-color-blue-text);
             }
           }
         }

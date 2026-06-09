@@ -1,6 +1,6 @@
-import { CircleFlag } from 'react-circle-flags';
 import useIsVisible from './../../helpers/UseIsVisible';
 import ButtonShare from './../general/ButtonShare';
+import CircleFlag from './../general/CircleFlag';
 
 import './Slide06.css';
 

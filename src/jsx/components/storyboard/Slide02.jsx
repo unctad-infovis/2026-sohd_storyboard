@@ -112,7 +112,8 @@ const Slide02 = ({ url }) => {
             <span className="label">Source:</span> UN Trade and Development (UNCTAD), based on LSEG Data & Analytics.
           </div>
           <div className="note">
-            <span className="label">Note:</span> Price increases compare average prices for the period 1 January 2024 – 27 February 2026 with prices during the period following the military escalation, 28 February 2026 – 28 May 2026.
+            <span className="label">Note:</span> Price increases compare average prices for the period <span className="nowrap">1 January 2024</span> – <span className="nowrap">27 February 2026</span> with prices during the period following the military escalation, <span className="nowrap">28 February 2026</span> –{' '}
+            <span className="nowrap">28 May 2026</span>.
           </div>
         </div>
       </div>

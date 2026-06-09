@@ -36,16 +36,6 @@ export default function Slide08({ url }) {
               <span className="total_suffix">billion / year</span>
             </div>
           </div>
-          <div className="legend">
-            <span className="legend_item legend_ldc">
-              <span className="legend_swatch" />
-              Least developed country
-            </span>
-            <span className="legend_item legend_sids">
-              <span className="legend_swatch" />
-              Small island developing State
-            </span>
-          </div>
           <div className="bar_container">
             <div className="stacked_bar" style={{ width: inView ? '100%' : '0%' }}>
               <div className="segment seg_ldc">
@@ -59,6 +49,16 @@ export default function Slide08({ url }) {
                 </span>
               </div>
             </div>
+          </div>
+          <div className="legend">
+            <span className="legend_item legend_ldc">
+              <span className="legend_swatch" />
+              Least developed country
+            </span>
+            <span className="legend_item legend_sids">
+              <span className="legend_swatch" />
+              Small island developing State
+            </span>
           </div>
           <div className="chart_meta">
             <div className="source">

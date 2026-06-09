@@ -105,7 +105,6 @@
             font-weight: var(--un-font-weight-bolder);
             line-height: var(--un-line-height-smallest);
             margin: 0;
-            max-width: 300px;
             text-align: center;
           }
           .people {

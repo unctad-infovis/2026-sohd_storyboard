@@ -10,12 +10,14 @@
           max-width: min(950px, 100%);
         }
       }
+      h4 {
+        max-width: min(950px, 100%);
+      }
       /* ── Rolling total ── */
       .chart_container {
         max-width: min(800px, 100%);
         margin: auto auto;
         .total_container {
-          padding-left: clamp(20px, 5vw, 50px);
           .total_pre_text {
             color: var(--un-color-grey-darkest);
             font-size: var(--un-font-size-xl);
@@ -46,6 +48,7 @@
         }
         /* ── Legend ── */
         .legend {
+          justify-content: flex-start;
           .legend_ldc .legend_swatch {
             background: var(--un-color-blue);
           }
