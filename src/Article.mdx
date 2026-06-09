@@ -1,8 +1,13 @@
-<Header subtitle={props.meta.subtitle} title={props.meta.title} url={props.meta.url} />
+<Header 
+  full_report_url={props.meta.full_report_url}
+  subtitle={props.meta.subtitle}
+  title={props.meta.title}
+  url={props.meta.url}
+/>
 <div className="slides_container">
   <ProgressBar selector=".slides_container" />
   <SlideNav />
-  <Slide01 />
+  <Slide01 url={props.meta.url} />
   <Slide02 url={props.meta.url} />
   <Slide03 url={props.meta.url} />
   <Slide04 url={props.meta.url} />

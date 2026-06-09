@@ -2,7 +2,7 @@ import basePath from './../../helpers/BasePath';
 import ButtonShare from './../general/ButtonShare';
 import './Header.css';
 
-export default function Header({ subtitle, title, url }) {
+export default function Header({ full_report_url, subtitle, title, url }) {
   const handleScrollDown = () => {
     window.scrollBy({ behavior: 'smooth', top: window.innerHeight });
   };
@@ -19,6 +19,12 @@ export default function Header({ subtitle, title, url }) {
         <ButtonShare url={url} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconColor="#fff" size={36} />
         <h1 className="header_title">{title}</h1>
         <p className="header_subtitle">{subtitle}</p>
+        <a className="header_download_btn" href={full_report_url} rel="noopener" target="_blank">
+          <svg aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24">
+            <path d="M12 3v12m-5-5 5 5 5-5M5 21h14" />
+          </svg>
+          Download the full report (PDF)
+        </a>
         <p className="header_date">June 2026</p>
       </div>
 
