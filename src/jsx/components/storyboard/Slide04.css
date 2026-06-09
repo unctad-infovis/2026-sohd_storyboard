@@ -1,9 +1,19 @@
 #app-root-2026-sohd_storyboard .app {
   .slide_container.slide04 {
     .slide_content {
-      max-width: min(700px, 100%);
-      h4 {
-        text-align: center;
+      max-width: min(750px, 100%);
+      .title_container {
+        max-width: min(750px, 100%);
+        .share_container {
+          text-align: center;
+        }
+        h3 {
+          max-width: min(750px, 100%);
+          text-align: center;
+          span.accent_sids {
+            color: var(--un-color-yellow);
+          }
+        }
       }
       .panels {
         align-items: center;

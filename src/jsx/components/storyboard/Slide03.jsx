@@ -39,7 +39,7 @@ export default function Slide03({ url }) {
             <div>
               Hitting hard the world's most vulnerable economies:
               <br />
-              <span className="accent accent_ldc">the least developed countries</span> and <span className="accent accent_sids">small island developing States</span>
+              <span className="accent accent_ldc">the least developed countries</span> and <span className="accent accent_sids">small island developing States</span>.
             </div>
           </h3>
         </div>

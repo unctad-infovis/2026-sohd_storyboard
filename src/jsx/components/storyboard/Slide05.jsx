@@ -25,7 +25,7 @@ export default function Slide05({ url }) {
               </div>
             </h3>
           </div>
-          <h4>Share of net imports of crude and refined oil in 2024</h4>
+          <h4>Share of net imports of crude and refined oil in 2024.</h4>
         </div>
         <div className="visualisation_container">
           <div className="panels">
@@ -52,7 +52,6 @@ export default function Slide05({ url }) {
               </div>
               <p className="label">Crude oil</p>
             </div>
-
             {/* ── Right: gas station (blue, large) ── */}
             <div className="panel">
               <p className="pct pct_refined">
