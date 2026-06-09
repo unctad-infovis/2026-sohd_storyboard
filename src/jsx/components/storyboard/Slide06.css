@@ -3,8 +3,7 @@
     .slide_content {
       max-width: min(800px, 100%);
       .title_container {
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
         max-width: min(800px, 100%);
         h3 {
           max-width: min(800px, 100%);
@@ -23,6 +22,7 @@
       }
       /* ── Chart ── */
       .chart_columns {
+        padding-right: 50px;
         margin: auto auto 20px auto;
         .bar_row {
           align-items: center;
@@ -38,7 +38,7 @@
             @media (max-width: 600px) {
               width: 140px;
             }
-            @media (max-width: 600px) {
+            @media (max-width: 400px) {
               width: 110px;
             }
             .country_name {
@@ -54,33 +54,40 @@
             }
           }
           .bar_track {
-            background: var(--un-color-grey-lighest);
+            background: var(--un-color-grey-lightest);
             border-radius: 3px;
             flex: 1;
             height: 20px;
-            overflow: hidden;
-            .bar {
-              border-radius: 3px;
+            overflow: visible;
+            .bar_with_value {
               height: 100%;
-              width: 0%;
-              &.bar_sids {
-                background: var(--un-color-yellow);
+              position: relative;
+              .bar {
+                border-radius: 3px;
+                height: 100%;
+                width: 100%;
+                &.bar_sids {
+                  background: var(--un-color-yellow);
+                }
+                &.bar_ldc {
+                  background: var(--un-color-blue);
+                }
               }
-              &.bar_ldc {
-                background: var(--un-color-blue);
+              .bar_value {
+                font-size: var(--un-font-size-xxs);
+                font-weight: var(--un-font-weight-bold);
+                left: calc(100% + 6px);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                white-space: nowrap;
+                &.val_sids {
+                  color: var(--un-color-yellow-dark);
+                }
+                &.val_ldc {
+                  color: var(--un-color-blue-text);
+                }
               }
-            }
-          }
-          .bar_value {
-            flex-shrink: 0;
-            font-size: var(--un-font-size-xxs);
-            font-weight: var(--un-font-weight-bold);
-            min-width: 44px;
-            &.val_sids {
-              color: var(--un-color-yellow-dark);
-            }
-            &.val_ldc {
-              color: var(--un-color-blue-text);
             }
           }
         }

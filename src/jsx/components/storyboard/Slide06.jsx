@@ -30,11 +30,13 @@ function BarRow({ name, iso2, value, type, index, inView }) {
         <CircleFlag countryCode={iso2} height={26} />
       </div>
       <div className="bar_track">
-        <div className={`bar bar_${type}`} style={{ width: inView ? `${value}%` : '0%', transition: `width 0.85s cubic-bezier(0.25, 0, 0, 1) ${barDelay}` }} />
+        <div className={`bar_with_value bar_${type}`} style={{ width: inView ? `${value}%` : '0%', transition: `width 0.85s cubic-bezier(0.25, 0, 0, 1) ${barDelay}` }}>
+          <div className={`bar bar_${type}`} />
+          <span className={`bar_value val_${type}`} style={{ opacity: inView ? 1 : 0, transition: inView ? `opacity 0.3s ease ${valDelay}` : 'none' }}>
+            {value.toFixed(1)}%
+          </span>
+        </div>
       </div>
-      <span className={`bar_value val_${type}`} style={{ opacity: inView ? 1 : 0, transition: inView ? `opacity 0.3s ease ${valDelay}` : 'none' }}>
-        {value.toFixed(1)}%
-      </span>
     </div>
   );
 }

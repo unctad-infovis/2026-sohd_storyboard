@@ -13,24 +13,23 @@ export default function Header({ full_report_url, subtitle, title, url }) {
         <a className="header_logo_link" href="https://unctad.org" rel="noopener" target="_blank">
           <img alt="UN Trade and Development" className="header_logo" src={`${basePath()}assets/img/2026-sohd_storyboard_unctad_logo_white.png`} />
         </a>
-      </div>
-
-      <div className="header_hero">
-        <ButtonShare url={url} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconColor="#fff" size={36} />
-        <h1 className="header_title">{title}</h1>
-        <p className="header_subtitle">{subtitle}</p>
-        <a className="header_download_btn" href={full_report_url} rel="noopener" target="_blank">
-          <svg aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24">
-            <path d="M12 3v12m-5-5 5 5 5-5M5 21h14" />
-          </svg>
-          Download the full report (PDF)
-        </a>
-        <p className="header_date">June 2026</p>
+        <div className="header_hero">
+          <ButtonShare url={url} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconColor="#fff" size={36} />
+          <h1 className="header_title">{title}</h1>
+          <p className="header_subtitle">{subtitle}</p>
+          <a className="header_download_btn" href={full_report_url} rel="noopener" target="_blank">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path d="M12 3v12m-5-5 5 5 5-5M5 21h14" />
+            </svg>
+            Download the full report (PDF)
+          </a>
+          <p className="header_date">June 2026</p>
+        </div>
       </div>
 
       <div className="header_bottom">
         <button aria-label="Scroll down" className="header_scroll_btn" onClick={handleScrollDown} type="button">
-          <svg aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24">
+          <svg aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24" className="scroll_down">
             <path d="M6 9l6 6 6-6" />
           </svg>
         </button>

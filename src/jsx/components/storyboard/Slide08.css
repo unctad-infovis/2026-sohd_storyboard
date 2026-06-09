@@ -15,8 +15,8 @@
       }
       /* ── Rolling total ── */
       .chart_container {
-        max-width: min(800px, 100%);
         margin: auto auto;
+        max-width: min(800px, 100%);
         .total_container {
           .total_pre_text {
             color: var(--un-color-grey-darkest);
@@ -36,7 +36,7 @@
             .total_number {
               font-size: clamp(var(--un-font-size-xxxl), 8vw, var(--un-font-size-xxxxxl));
               font-weight: var(--un-font-weight-bold);
-              line-height: var(--un-line-height-smallest);
+              line-height: var(--un-line-height-small);
             }
             .total_suffix {
               color: var(--un-color-grey-darkest);
