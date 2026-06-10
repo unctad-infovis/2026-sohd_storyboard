@@ -76,6 +76,9 @@
               fill: url(#stripe_dual_09);
               stroke: var(--un-color-blue);
             }
+            &:hover {
+              fill-opacity: 1
+            }
           }
         }
       }
