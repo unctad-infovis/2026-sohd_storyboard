@@ -3,9 +3,9 @@
 
 :root {
   --main-color: #009edb;
-  --un-font-size-xxxxxl: 80px;
   --un-font-size-title_end: 55px;
   --un-font-size-title_start: 100px;
+  --un-font-size-xxxxxl: 80px;
   --un-font-weight-semibold: 500;
   --un-font-weight-superbold: 900;
   --un-line-height-xl: 1.4;
@@ -15,7 +15,7 @@
 #app-root-2026-sohd_storyboard {
   .app {
     box-sizing: border-box;
-    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: Inter, Arial, sans-serif;
     button {
       font-family: Inter, Arial, sans-serif;
     }

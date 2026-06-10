@@ -1,18 +1,19 @@
 import { createRoot } from 'react-dom/client';
 
+import meta from './../meta.json';
 import App from './App.jsx';
-import UNCTADSitePreview from './components/general/UNCTADSitePreview.jsx';
+import UNCTADSiteHeader from './components/general/UNCTADSiteHeader.jsx';
 
-const isLocalhost = window.location.hostname !== 'unctad.org';
+const showSiteHeader = meta.show_site_header && window.location.hostname !== 'unctad.org';
 
 const container = document.getElementById(`app-root-${__PROJECT_NAME__}`);
 const root = createRoot(container);
 root.render(
-  isLocalhost ? (
-    <UNCTADSitePreview>
-      <App />
-    </UNCTADSitePreview>
+  showSiteHeader ? (
+    <UNCTADSiteHeader>
+      <App meta={meta} />
+    </UNCTADSiteHeader>
   ) : (
-    <App />
+    <App meta={meta} />
   )
 );

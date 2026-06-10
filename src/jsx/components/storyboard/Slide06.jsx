@@ -1,26 +1,32 @@
+import { COUNTRIES } from './../../data/countries';
+import { LDC } from './../../data/countryGroups';
 import useIsVisible from './../../helpers/UseIsVisible';
 import ButtonShare from './../general/ButtonShare';
-import CircleFlag from './../general/CircleFlag';
+import CircleFlag from './components/CircleFlag';
 
 import './Slide06.css';
 
+// Only slide-specific values — name, iso2, and type are looked up from COUNTRIES / LDC.
+// Note: seven LDCs here are also SIDS; they are shown in the LDC aggregate (type always 'ldc' for dual-members).
 const DATA = [
-  { name: 'Seychelles', iso2: 'sc', value: 99.0, type: 'sids' },
-  { name: 'Uganda', iso2: 'ug', value: 61.0, type: 'ldc' },
-  { name: 'Mauritius', iso2: 'mu', value: 58.3, type: 'sids' },
-  { name: 'United Republic of Tanzania', iso2: 'tz', value: 56.0, type: 'ldc' },
-  { name: 'Zambia', iso2: 'zm', value: 44.7, type: 'ldc' },
-  { name: 'Maldives', iso2: 'mv', value: 43.1, type: 'sids' },
-  { name: 'Mauritania', iso2: 'mr', value: 43.0, type: 'ldc' },
-  { name: 'Mozambique', iso2: 'mz', value: 35.5, type: 'ldc' },
-  { name: 'Malawi', iso2: 'mw', value: 34.4, type: 'ldc' },
-  { name: 'Senegal', iso2: 'sn', value: 14.6, type: 'ldc' },
-  { name: 'Cabo Verde', iso2: 'cv', value: 12.7, type: 'sids' },
-  { name: 'Togo', iso2: 'tg', value: 9.0, type: 'ldc' },
-  { name: 'Benin', iso2: 'bj', value: 6.5, type: 'ldc' }
+  { iso3: 'SYC', value: 99.0 },
+  { iso3: 'UGA', value: 61.0 },
+  { iso3: 'MUS', value: 58.3 },
+  { iso3: 'TZA', value: 56.0 },
+  { iso3: 'ZMB', value: 44.7 },
+  { iso3: 'MDV', value: 43.1 },
+  { iso3: 'MRT', value: 43.0 },
+  { iso3: 'MOZ', value: 35.5 },
+  { iso3: 'MWI', value: 34.4 },
+  { iso3: 'SEN', value: 14.6 },
+  { iso3: 'CPV', value: 12.7 },
+  { iso3: 'TGO', value: 9.0 },
+  { iso3: 'BEN', value: 6.5 }
 ];
 
-function BarRow({ name, iso2, value, type, index, inView }) {
+function BarRow({ iso3, value, index, inView }) {
+  const { name, iso2 } = COUNTRIES[iso3];
+  const type = LDC.has(iso3) ? 'ldc' : 'sids';
   const barDelay = `${index * 60}ms`;
   const valDelay = `calc(${index * 60}ms + 0.85s)`;
   return (
@@ -71,7 +77,7 @@ export default function Slide06({ url }) {
         <div className="chart_columns">
           <div className="chart_col">
             {DATA.map((d, i) => (
-              <BarRow key={d.name} {...d} index={i} inView={isVisible} />
+              <BarRow key={d.iso3} {...d} index={i} inView={isVisible} />
             ))}
           </div>
         </div>

@@ -2,19 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import Article from '../Article.mdx';
 
-// General
-// import BackToTop from './components/general/BackToTop.jsx';
-// import ChartDataWrapper from './components/general/ChartDataWrapper.jsx';
-// import Image from './components/general/Image.jsx';
-import ProgressBar from './components/general/ProgressBar.jsx';
-// import Quote from './components/general/Quote.jsx';
-
-// Minisite
-// import Header from './components/minisite/Header.jsx';
-// import HeaderChapter from './components/minisite/HeaderChapter.jsx';
-// import SideScrollingText from './components/minisite/SideScrollingText.jsx';
-
 // Storyboard
+import SlideNav from './components/storyboard/components/SlideNav.jsx';
 import Footer from './components/storyboard/Footer.jsx';
 import Header from './components/storyboard/Header.jsx';
 import Slide01 from './components/storyboard/Slide01.jsx';
@@ -27,17 +16,13 @@ import Slide07 from './components/storyboard/Slide07.jsx';
 import Slide08 from './components/storyboard/Slide08.jsx';
 import Slide09 from './components/storyboard/Slide09.jsx';
 import Slide10 from './components/storyboard/Slide10.jsx';
-import SlideNav from './components/storyboard/SlideNav.jsx';
 
 import './../styles/styles.css';
 import './components/storyboard/Slide.css';
 
-import meta from './../meta.json';
-
 const components = {
   Footer,
   Header,
-  ProgressBar,
   Slide01,
   Slide02,
   Slide03,
@@ -51,17 +36,15 @@ const components = {
   SlideNav
 };
 
-const App = () => {
+const App = ({ meta }) => {
   const appRef = useRef();
 
   useEffect(() => {
     const elements = appRef.current.querySelectorAll('.slide_content p, .slide_content ul, .slide_content ol, .slide_content h3, .slide_content blockquote');
-
     // Options for the observer (when the p tag is 50% in the viewport)
     const options = {
       threshold: 0.5 // Trigger when 50% of the paragraph is visible
     };
-
     // Callback function for when the intersection occurs
     const observerCallback = entries => {
       entries.forEach(entry => {
@@ -71,10 +54,8 @@ const App = () => {
         }
       });
     };
-
     // Create an IntersectionObserver instance with the callback and options
     const observer = new IntersectionObserver(observerCallback, options);
-
     // Observe each paragraph
     for (const el of elements) {
       observer.observe(el);

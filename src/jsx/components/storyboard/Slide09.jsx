@@ -1,6 +1,8 @@
 import * as d3 from 'd3';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as topojson from 'topojson-client';
+import { COUNTRIES } from '../../data/countries';
+import { getGroup } from '../../data/countryGroups';
 import loadFile from '../../helpers/LoadFile';
 import useIsVisible from '../../helpers/UseIsVisible';
 import ButtonShare from './../general/ButtonShare';
@@ -12,54 +14,54 @@ import './Slide09.css';
 const STAGGER_MS = 60;
 const GROUP_ORDER = { ldc: 0, dual: 1, sids: 2 };
 
-// Change in net oil import bill from a 50% price increase, % of GDP
+// Only slide-specific values — name, group, and ll are looked up from COUNTRIES / getGroup.
 const DATA = [
-  // LDC (20) — stagger first
-  { iso: 'MRT', name: 'Mauritania', group: 'ldc', value: 7.3, ll: [-10.9, 21.0] },
-  { iso: 'GMB', name: 'Gambia', group: 'ldc', value: 6.3, ll: [-15.4, 13.4] },
-  { iso: 'BFA', name: 'Burkina Faso', group: 'ldc', value: 4.9, ll: [-1.6, 12.2] },
-  { iso: 'LBR', name: 'Liberia', group: 'ldc', value: 4.8, ll: [-9.4, 6.4] },
-  { iso: 'ZMB', name: 'Zambia', group: 'ldc', value: 4.3, ll: [27.8, -13.1] },
-  { iso: 'LSO', name: 'Lesotho', group: 'ldc', value: 4.2, ll: [28.2, -29.6] },
-  { iso: 'MLI', name: 'Mali', group: 'ldc', value: 3.8, ll: [-3.9, 17.6] },
-  { iso: 'CAF', name: 'Central African Republic', group: 'ldc', value: 3.7, ll: [20.9, 6.6] },
-  { iso: 'MMR', name: 'Myanmar', group: 'ldc', value: 3.4, ll: [95.9, 21.9] },
-  { iso: 'KHM', name: 'Cambodia', group: 'ldc', value: 2.8, ll: [104.9, 12.5] },
-  { iso: 'MOZ', name: 'Mozambique', group: 'ldc', value: 2.8, ll: [35.5, -18.6] },
-  { iso: 'MWI', name: 'Malawi', group: 'ldc', value: 2.2, ll: [34.3, -13.3] },
-  { iso: 'UGA', name: 'Uganda', group: 'ldc', value: 1.7, ll: [32.3, 1.4] },
-  { iso: 'TZA', name: 'United Republic of Tanzania', group: 'ldc', value: 1.7, ll: [34.9, -6.4] },
-  { iso: 'SEN', name: 'Senegal', group: 'ldc', value: 1.5, ll: [-14.5, 14.5] },
-  { iso: 'LAO', name: "Lao People's Democratic Republic", group: 'ldc', value: 0.9, ll: [102.5, 18.0] },
-  { iso: 'DJI', name: 'Djibouti', group: 'ldc', value: 0.8, ll: [42.5, 11.7] },
-  { iso: 'BEN', name: 'Benin', group: 'ldc', value: 0.8, ll: [2.3, 9.3] },
-  { iso: 'BGD', name: 'Bangladesh', group: 'ldc', value: 0.8, ll: [90.4, 23.7] },
-  { iso: 'NPL', name: 'Nepal', group: 'ldc', value: 0.5, ll: [84.1, 28.4] },
-  // Dual — both LDC and SIDS (2) — stagger second
-  { iso: 'SLB', name: 'Solomon Islands', group: 'dual', value: 1.1, ll: [160.0, -9.7] },
-  { iso: 'TUV', name: 'Tuvalu', group: 'dual', value: 1.0, ll: [179.2, -8.5] },
-  // SIDS (21) — stagger third
-  { iso: 'VUT', name: 'Vanuatu', group: 'sids', value: 5.8, ll: [167.8, -16.0] },
-  { iso: 'MDV', name: 'Maldives', group: 'sids', value: 5.2, ll: [73.2, 3.2] },
-  { iso: 'TON', name: 'Tonga', group: 'sids', value: 4.4, ll: [-175.2, -21.2] },
-  { iso: 'MUS', name: 'Mauritius', group: 'sids', value: 4.2, ll: [57.6, -20.3] },
-  { iso: 'FJI', name: 'Fiji', group: 'sids', value: 3.2, ll: [178.0, -17.7] },
-  { iso: 'WSM', name: 'Samoa', group: 'sids', value: 3.0, ll: [-171.8, -13.8] },
-  { iso: 'JAM', name: 'Jamaica', group: 'sids', value: 2.8, ll: [-77.3, 18.1] },
-  { iso: 'LCA', name: 'Saint Lucia', group: 'sids', value: 2.6, ll: [-60.9, 13.9] },
-  { iso: 'BLZ', name: 'Belize', group: 'sids', value: 2.5, ll: [-88.5, 17.2] },
-  { iso: 'MHL', name: 'Marshall Islands', group: 'sids', value: 2.4, ll: [171.4, 7.1] },
-  { iso: 'CPV', name: 'Cabo Verde', group: 'sids', value: 2.2, ll: [-23.6, 16.5] },
-  { iso: 'SYC', name: 'Seychelles', group: 'sids', value: 2.0, ll: [55.5, -4.7] },
-  { iso: 'BRB', name: 'Barbados', group: 'sids', value: 1.8, ll: [-59.5, 13.2] },
-  { iso: 'KNA', name: 'Saint Kitts and Nevis', group: 'sids', value: 1.5, ll: [-62.7, 17.3] },
-  { iso: 'DOM', name: 'Dominican Republic', group: 'sids', value: 1.5, ll: [-70.7, 19.0] },
-  { iso: 'VCT', name: 'Saint Vincent and the Grenadines', group: 'sids', value: 1.3, ll: [-61.2, 13.2] },
-  { iso: 'FSM', name: 'Micronesia (Federated States of)', group: 'sids', value: 1.2, ll: [158.2, 6.9] },
-  { iso: 'ATG', name: 'Antigua and Barbuda', group: 'sids', value: 1.1, ll: [-61.8, 17.1] },
-  { iso: 'PLW', name: 'Palau', group: 'sids', value: 0.9, ll: [134.6, 7.5] },
-  { iso: 'NIU', name: 'Niue', group: 'sids', value: 0.8, ll: [-169.9, -19.1] },
-  { iso: 'NRU', name: 'Nauru', group: 'sids', value: 0.6, ll: [166.9, -0.5] }
+  // LDC (20)
+  { iso3: 'MRT', value: 7.3 },
+  { iso3: 'GMB', value: 6.3 },
+  { iso3: 'BFA', value: 4.9 },
+  { iso3: 'LBR', value: 4.8 },
+  { iso3: 'ZMB', value: 4.3 },
+  { iso3: 'LSO', value: 4.2 },
+  { iso3: 'MLI', value: 3.8 },
+  { iso3: 'CAF', value: 3.7 },
+  { iso3: 'MMR', value: 3.4 },
+  { iso3: 'KHM', value: 2.8 },
+  { iso3: 'MOZ', value: 2.8 },
+  { iso3: 'MWI', value: 2.2 },
+  { iso3: 'UGA', value: 1.7 },
+  { iso3: 'TZA', value: 1.7 },
+  { iso3: 'SEN', value: 1.5 },
+  { iso3: 'LAO', value: 0.9 },
+  { iso3: 'DJI', value: 0.8 },
+  { iso3: 'BEN', value: 0.8 },
+  { iso3: 'BGD', value: 0.8 },
+  { iso3: 'NPL', value: 0.5 },
+  // Dual — both LDC and SIDS (2)
+  { iso3: 'SLB', value: 1.1 },
+  { iso3: 'TUV', value: 1.0 },
+  // SIDS (21)
+  { iso3: 'VUT', value: 5.8 },
+  { iso3: 'MDV', value: 5.2 },
+  { iso3: 'TON', value: 4.4 },
+  { iso3: 'MUS', value: 4.2 },
+  { iso3: 'FJI', value: 3.2 },
+  { iso3: 'WSM', value: 3.0 },
+  { iso3: 'JAM', value: 2.8 },
+  { iso3: 'LCA', value: 2.6 },
+  { iso3: 'BLZ', value: 2.5 },
+  { iso3: 'MHL', value: 2.4 },
+  { iso3: 'CPV', value: 2.2 },
+  { iso3: 'SYC', value: 2.0 },
+  { iso3: 'BRB', value: 1.8 },
+  { iso3: 'KNA', value: 1.5 },
+  { iso3: 'DOM', value: 1.5 },
+  { iso3: 'VCT', value: 1.3 },
+  { iso3: 'FSM', value: 1.2 },
+  { iso3: 'ATG', value: 1.1 },
+  { iso3: 'PLW', value: 0.9 },
+  { iso3: 'NIU', value: 0.8 },
+  { iso3: 'NRU', value: 0.6 }
 ];
 
 const W = 960;
@@ -114,11 +116,12 @@ export default function Slide09({ url }) {
     const solidBorderPath = solidFeats.length ? pathGen({ type: 'FeatureCollection', features: solidFeats }) : null;
     const dashedBorderPath = dashedFeats.length ? pathGen({ type: 'FeatureCollection', features: dashedFeats }) : null;
 
-    // Bubbles — project from hardcoded ll
+    // Bubbles — project ll from the countries registry
     const bubbles = DATA.map(item => {
-      const xy = projection(item.ll);
+      const country = COUNTRIES[item.iso3];
+      const xy = projection(country.ll);
       if (!xy) return null;
-      return { ...item, x: xy[0], y: xy[1] };
+      return { iso: item.iso3, name: country.name, group: getGroup(item.iso3), value: item.value, x: xy[0], y: xy[1] };
     }).filter(Boolean);
 
     // Stagger: ldc → dual → sids, value desc within group

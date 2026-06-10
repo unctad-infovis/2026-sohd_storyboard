@@ -6,10 +6,13 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 100svh;
+    height: calc(100svh - 200px);
     padding: clamp(5px, 4vw, 100px) clamp(5px, 4vw, 100px);
     position: relative;
     z-index: 10;
+    @media all and (max-width: 1200px) {
+      height: calc(100svh - 250px);
+    }
     &:before {
       background: var(--hero-bg-url) center 60% / cover no-repeat;
       content: '';
