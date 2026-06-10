@@ -61,6 +61,7 @@
             stroke-width: 1;
             transform-box: fill-box;
             transform-origin: center;
+            transition: fill-opacity 1s ease-in-out;
             &.bubble_ldc {
               fill-opacity: 0.5;
               fill: var(--un-color-blue);
@@ -77,7 +78,8 @@
               stroke: var(--un-color-blue);
             }
             &:hover {
-              fill-opacity: 1
+              fill-opacity: 1;
+              transition: fill-opacity 1s ease-in-out;
             }
           }
         }
