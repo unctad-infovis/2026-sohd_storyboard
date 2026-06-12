@@ -65,7 +65,8 @@ export default function Slide08({ url }) {
               <span className="label">Source:</span> UN Trade and Development (UNCTAD), based on UN Comtrade.
             </div>
             <div className="note">
-              <span className="label">Note:</span> Figures for 65 LDCs and SIDS that are net importers of crude or refined oil products, excluding Singapore.
+              <span className="label">Note:</span> Oil products refer to HS 2709 and 2710. Figures for 65 least developed countries and small island developing States that are net importers of crude and refined oil products, excluding Singapore. Seven least developed countries are also small island developing States;
+              they are shown in the LDC aggregate.
             </div>
           </div>
         </div>

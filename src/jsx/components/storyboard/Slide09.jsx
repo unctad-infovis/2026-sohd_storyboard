@@ -260,7 +260,7 @@ export default function Slide09({ url }) {
         </div>
         <div className="chart_meta">
           <div className="source">
-            <span className="label">Source:</span> UN Trade and Development (UNCTAD), based on UN Comtrade. Figures for LDCs and SIDS that are net importers of crude or refined oil products, excluding Singapore.
+            <span className="label">Source:</span> UN Trade and Development (UNCTAD) computations, based on UN Comtrade and UNCTADStat.
           </div>
           <div className="note">
             <span className="label">Note:</span>{' '}

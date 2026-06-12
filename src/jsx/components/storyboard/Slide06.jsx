@@ -86,7 +86,7 @@ export default function Slide06({ url }) {
             <span className="label">Source:</span> UN Trade and Development (UNCTAD), based on UN Comtrade.
           </div>
           <div className="note">
-            <span className="label">Note:</span> Seven least developed countries are also small island developing States; they are shown in the LDC aggregate. Hormuz region considered as Bahrain, Iran, Iraq, Kuwait, Qatar, Saudi Arabia and the United Arab Emirates. Net importers, excluding Singapore.
+            <span className="label">Note:</span> Countries sourcing more than 5% of their oil imports from the Hormuz region. Oil products refer to HS 2709 and 2710. Hormuz region considered as Bahrain, Iran, Iraq, Kuwait, Qatar, Saudi Arabia, and United Arab Emirates. Net importers excluding Singapore.
           </div>
         </div>
       </div>
