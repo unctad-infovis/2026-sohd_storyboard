@@ -6,7 +6,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: calc(100svh - 200px);
+    height: calc(100svh - 230px);
     padding: clamp(5px, 4vw, 100px) clamp(5px, 4vw, 100px);
     position: relative;
     z-index: 10;
@@ -39,7 +39,8 @@
         display: block;
       }
       .header_logo {
-        display: block;
+        /*display: block;*/
+        display: none;
         height: auto;
         width: 120px;
       }

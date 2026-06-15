@@ -3,9 +3,21 @@ import ButtonShare from './../general/ButtonShare';
 import './Header.css';
 
 export default function Header({ full_report_url, subtitle, title, url }) {
-  const handleScrollDown = () => {
-    window.scrollBy({ behavior: 'smooth', top: window.innerHeight });
-  };
+  function scrollToY() {
+    const start = window.scrollY;
+    const dist = Math.round(window.innerHeight) - start;
+    if (!dist) return;
+    const duration = 1000;
+    const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
+    let t0 = null;
+    const step = ts => {
+      if (t0 === null) t0 = ts;
+      const p = Math.min((ts - t0) / duration, 1);
+      window.scrollTo(0, start + dist * ease(p));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
 
   return (
     <div className="header_container" style={{ '--hero-bg-url': `url(${basePath()}assets/img/2026-sohd_storyboard_main.jpg)` }}>
@@ -28,7 +40,7 @@ export default function Header({ full_report_url, subtitle, title, url }) {
       </div>
 
       <div className="header_bottom">
-        <button aria-label="Scroll down" className="header_scroll_btn" onClick={handleScrollDown} type="button">
+        <button aria-label="Scroll down" className="header_scroll_btn" onClick={() => scrollToY()} type="button">
           <svg aria-hidden="true" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24" className="scroll_down">
             <path d="M6 9l6 6 6-6" />
           </svg>
