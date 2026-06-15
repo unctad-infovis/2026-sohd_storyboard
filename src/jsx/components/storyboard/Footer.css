@@ -66,6 +66,7 @@
             top: -40px;
           }
           .footer_quote {
+            border: 0;
             font-size: var(--un-font-size-xl);
             font-style: italic;
             font-weight: var(--un-font-weight-normal);
