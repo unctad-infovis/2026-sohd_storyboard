@@ -56,13 +56,13 @@
           Reduced motion: respect user preference.
           Words appear immediately without animation.
         */
-        /*@media (prefers-reduced-motion: reduce) {
+        @media (prefers-reduced-motion: reduce) {
           .word {
             opacity: 1;
             transform: none;
             transition: none;
           }
-        }*/
+        }
       }
     }
   }

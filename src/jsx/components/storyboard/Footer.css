@@ -148,7 +148,8 @@
       /* ── Logo ── */
       .footer_logo_wrap {
         .footer_logo {
-          display: block;
+          /*display: block;*/
+          display: none;
           height: auto;
           width: 140px;
         }

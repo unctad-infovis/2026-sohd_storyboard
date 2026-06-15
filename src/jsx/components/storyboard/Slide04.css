@@ -4,10 +4,6 @@
       max-width: min(750px, 100%);
       .title_container {
         max-width: min(750px, 100%);
-        .share_container {
-          position: static;
-          text-align: center;
-        }
         h3 {
           max-width: min(750px, 100%);
           text-align: center;

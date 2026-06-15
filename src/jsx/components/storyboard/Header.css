@@ -6,12 +6,12 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: calc(100svh - 230px);
+    height: calc(100svh);
     padding: clamp(5px, 4vw, 100px) clamp(5px, 4vw, 100px);
     position: relative;
     z-index: 10;
     @media all and (max-width: 1200px) {
-      height: calc(100svh - 250px);
+      height: calc(100svh);
     }
     &:before {
       background: var(--hero-bg-url) center 60% / cover no-repeat;
@@ -33,6 +33,7 @@
     .header_top {
       display: flex;
       flex: 1 0 auto;
+      height: 70%;
       position: relative;
       z-index: 10;
       .header_logo_link {
@@ -124,6 +125,7 @@
       position: relative;
       z-index: 2;
       display: flex;
+      height: 30%;
       flex: 0 0 auto;
       justify-content: center;
       .header_scroll_btn {

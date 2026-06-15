@@ -4,6 +4,7 @@
       .title_container {
         max-width: min(1000px, 100%);
         .share_container {
+          position: static;
           text-align: center;
         }
         h3 {
