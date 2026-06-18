@@ -12,7 +12,7 @@
     @media all and (max-width: 1024px) {
       height: calc(100svh - 340px);
     }
-     @media all and (max-width: 800px) {
+    @media all and ((max-width: 800px) or (max-height: 900px)) {
       height: calc(100svh);
     }
     &:before {

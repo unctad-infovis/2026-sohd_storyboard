@@ -5,7 +5,7 @@ import './Header.css';
 export default function Header({ full_report_url, subtitle, title, url }) {
   function scrollToY() {
     const start = window.scrollY;
-    const dist = Math.round(window.innerHeight) - start;
+    const dist = Math.round(window.innerHeight) - start + 50;
     if (!dist) return;
     const duration = 1000;
     const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
