@@ -37,6 +37,8 @@
       display: flex;
       flex: 1 0 auto;
       height: 90%;
+      margin: auto auto;
+      max-width: 1350px;
       position: relative;
       z-index: 10;
       .header_logo_link {
