@@ -1,6 +1,6 @@
-import useIsVisible from './../../helpers/UseIsVisible';
-import ButtonShare from './../general/ButtonShare';
-import RollingNumber from './../general/RollingNumber';
+import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.jsx';
+import RollingNumber from '@unctad-infovis/general-tools/components/RollingNumber.jsx';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 
 import './Slide04.css';
 

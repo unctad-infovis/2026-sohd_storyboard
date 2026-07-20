@@ -1,7 +1,7 @@
+import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.jsx';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import { COUNTRIES } from './../../data/countries';
 import { LDC } from './../../data/countryGroups';
-import useIsVisible from './../../helpers/UseIsVisible';
-import ButtonShare from './../general/ButtonShare';
 import CircleFlag from './components/CircleFlag';
 
 import './Slide06.css';

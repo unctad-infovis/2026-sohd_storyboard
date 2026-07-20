@@ -1,4 +1,4 @@
-import basePath from '../../helpers/BasePath';
+import basePath from '@unctad-infovis/general-tools/helpers/BasePath.js';
 import './Footer.css';
 
 export default function Footer({ full_report_url, more_reports_url }) {

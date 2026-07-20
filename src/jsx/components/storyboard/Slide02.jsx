@@ -1,7 +1,7 @@
+import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.jsx';
+import RollingNumber from '@unctad-infovis/general-tools/components/RollingNumber.jsx';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import { useEffect, useRef, useState } from 'react';
-import RollingNumber from './../general/RollingNumber';
-import useIsVisible from './../../helpers/UseIsVisible';
-import ButtonShare from './../general/ButtonShare';
 
 import './Slide02.css';
 

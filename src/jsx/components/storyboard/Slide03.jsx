@@ -1,6 +1,6 @@
+import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.jsx';
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
 import { useEffect, useRef, useState } from 'react';
-import loadFile from './../../helpers/LoadFile';
-import ButtonShare from './../general/ButtonShare';
 import Globe from './components/Globe';
 
 import './Slide03.css';

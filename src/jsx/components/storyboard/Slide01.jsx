@@ -1,4 +1,4 @@
-import useIsVisible from './../../helpers/UseIsVisible';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import AnimatedText from './components/AnimatedText';
 
 import './Slide01.css';

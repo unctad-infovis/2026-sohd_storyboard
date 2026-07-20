@@ -17,7 +17,8 @@ import Slide08 from './components/storyboard/Slide08.jsx';
 import Slide09 from './components/storyboard/Slide09.jsx';
 import Slide10 from './components/storyboard/Slide10.jsx';
 
-import './../styles/styles.css';
+import '@unctad-infovis/general-tools/styles/styles.css';
+import './App.css';
 import './components/storyboard/Slide.css';
 
 const components = {

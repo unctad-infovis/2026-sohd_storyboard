@@ -1,8 +1,8 @@
+import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.jsx';
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import { useEffect, useMemo, useState } from 'react';
 import CSVtoJSON from './../../helpers/CsvToJson';
-import loadFile from './../../helpers/LoadFile';
-import useIsVisible from './../../helpers/UseIsVisible';
-import ButtonShare from './../general/ButtonShare';
 import LineChart from './components/LineChart';
 
 import './Slide02.css';

@@ -1,5 +1,5 @@
-import basePath from './../../helpers/BasePath';
-import ButtonShare from './../general/ButtonShare';
+import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.jsx';
+import basePath from '@unctad-infovis/general-tools/helpers/BasePath.js';
 import './Header.css';
 
 export default function Header({ full_report_url, subtitle, title, url }) {

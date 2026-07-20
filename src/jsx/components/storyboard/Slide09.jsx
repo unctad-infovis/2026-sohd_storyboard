@@ -1,11 +1,11 @@
+import ButtonShare from '@unctad-infovis/general-tools/components/ButtonShare.jsx';
+import loadFile from '@unctad-infovis/general-tools/helpers/LoadFile.js';
+import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import * as d3 from 'd3';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as topojson from 'topojson-client';
 import { COUNTRIES } from '../../data/countries';
 import { getGroup } from '../../data/countryGroups';
-import loadFile from '../../helpers/LoadFile';
-import useIsVisible from '../../helpers/UseIsVisible';
-import ButtonShare from './../general/ButtonShare';
 
 import './components/Tooltip.css';
 import './Slide09.css';
