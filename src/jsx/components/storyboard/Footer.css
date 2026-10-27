@@ -1,209 +1,133 @@
 #app-root-2026-sohd_storyboard .app {
   .footer_container {
-    align-items: center;
-    box-sizing: border-box;
-    display: flex;
-    min-height: calc(100svh + 80px);
-    justify-content: center;
+    background: var(--un-color-blue-darkest);
+    color: #fff;
+    isolation: isolate;
+    padding: 120px 0;
     position: relative;
     z-index: 2;
-    &:before {
-      background: var(--footer-bg-url) center 60% / cover no-repeat;
-      content: '';
-      filter: url(#hero-photo-grade) saturate(0.92) contrast(1.1) brightness(1.04);
-      inset: 0;
-      opacity: 0.18;
-      position: absolute;
-      z-index: -1;
-    }
+    /* The same fine line texture as the report pages, in light lines on the navy */
     &:after {
-      background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.55) 70%, rgba(247, 248, 250, 0.92) 100%);
+      background-image:
+        repeating-linear-gradient(0deg, color-mix(in srgb, var(--un-color-blue-light) 7%, transparent) 0 1px, transparent 1px 4px), repeating-linear-gradient(0deg, color-mix(in srgb, var(--un-color-blue-light) 7%, transparent) 0 1px, transparent 1px 5px),
+        repeating-linear-gradient(28deg, color-mix(in srgb, var(--un-color-blue-light) 5%, transparent) 0 1px, transparent 1px 6px), repeating-linear-gradient(28deg, color-mix(in srgb, var(--un-color-blue-light) 5%, transparent) 0 1px, transparent 1px 7px);
       content: '';
       inset: 0;
+      mix-blend-mode: screen;
+      opacity: 0.9;
+      pointer-events: none;
       position: absolute;
-      z-index: -1;
+      z-index: 2;
     }
     .footer_content {
-      align-items: center;
+      margin: 0 auto;
+      max-width: 1080px;
+      padding: 0 28px;
+      @media (max-width: 600px) {
+        padding: 0 16px;
+      }
+    }
+    .footer_quote_section {
+      margin: 0;
+      max-width: none;
+      padding: 0 0 0 88px;
+      position: relative;
+      @media (max-width: 600px) {
+        padding-left: 56px;
+      }
+      .footer_quote {
+        border: 0;
+        font-size: clamp(var(--un-font-size-xl), 3.8vw, calc(var(--un-font-size-xxxl) * 1.15));
+        font-style: normal;
+        font-weight: var(--un-font-weight-bold);
+        letter-spacing: -0.02em;
+        line-height: var(--un-line-height-small);
+        margin: 0;
+        max-width: 20em;
+        padding: 0;
+        &::before {
+          background-color: var(--un-color-yellow);
+          content: '';
+          height: 44px;
+          left: 0;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 44'><path d='M0.6 27 C1.5 13 8 4 21 0 L23 4.5 C15 8 11 12 10.2 16.9 A14 14 0 1 1 0.6 27 Z M34.6 27 C35.5 13 42 4 55 0 L57 4.5 C49 8 45 12 44.2 16.9 A14 14 0 1 1 34.6 27 Z'/></svg>") no-repeat center / contain;
+          -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 44'><path d='M0.6 27 C1.5 13 8 4 21 0 L23 4.5 C15 8 11 12 10.2 16.9 A14 14 0 1 1 0.6 27 Z M34.6 27 C35.5 13 42 4 55 0 L57 4.5 C49 8 45 12 44.2 16.9 A14 14 0 1 1 34.6 27 Z'/></svg>") no-repeat center / contain;
+          position: absolute;
+          top: 4px;
+          width: 62px;
+          @media (max-width: 600px) {
+            height: 30px;
+            width: 42px;
+          }
+        }
+      }
+      .footer_attribution {
+        font-size: var(--un-font-size-xxs);
+        margin-top: 28px;
+        opacity: 0.85;
+        .footer_name {
+          display: block;
+          font-size: var(--un-font-size-xs);
+          font-weight: var(--un-font-weight-bolder);
+        }
+      }
+    }
+    .footer_ctas {
+      align-items: flex-start;
       display: flex;
       flex-direction: column;
-      gap: clamp(24px, 5vw, 48px);
-      max-width: 860px;
-      padding: clamp(32px, 5vh, 60px) clamp(16px, 4vw, 32px);
-      width: 100%;
-      /* ── Quote ── */
-      .footer_quote_section {
+      gap: 16px;
+      margin-top: 44px;
+      padding-left: 88px;
+      position: relative;
+      z-index: 3;
+      @media (max-width: 600px) {
+        padding-left: 56px;
+      }
+      a.footer_download_btn {
         align-items: center;
-        display: flex;
-        gap: 40px;
-        .footer_photo_wrap {
-          border-radius: 50%;
-          border: 3px solid var(--un-color-blue);
-          box-sizing: border-box;
+        background: var(--un-color-yellow);
+        border-radius: 100px;
+        color: var(--un-color-grey-darkest);
+        display: inline-flex;
+        font-size: var(--un-font-size-xs);
+        font-weight: var(--un-font-weight-bold);
+        gap: 10px;
+        padding: 12px 18px;
+        text-decoration: none;
+        transition:
+          box-shadow 0.2s ease,
+          transform 0.2s ease;
+        &:hover {
+          box-shadow:
+            0 10px 32px color-mix(in srgb, var(--un-color-yellow) 50%, transparent),
+            0 0 0 6px color-mix(in srgb, var(--un-color-yellow) 12%, transparent);
+          transform: translateY(-2px);
+        }
+        svg {
           flex: 0 0 auto;
-          .footer_photo {
-            border-radius: 50%;
-            border: 3px solid #fff;
-            box-sizing: border-box;
-            display: block;
-            height: 200px;
-            object-fit: cover;
-            width: 200px;
-          }
-        }
-        .footer_quote_wrap {
-          position: relative;
-          .footer_quote_mark {
-            color: var(--un-color-blue);
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 100px;
-            font-weight: var(--un-font-weight-normal);
-            left: 0;
-            line-height: 1;
-            opacity: 0.2;
-            pointer-events: none;
-            position: absolute;
-            top: -40px;
-          }
-          .footer_quote {
-            border: 0;
-            font-size: var(--un-font-size-xl);
-            font-style: italic;
-            font-weight: var(--un-font-weight-normal);
-            line-height: var(--un-line-height-xl);
-            margin: 0 0 20px;
-            padding: 0;
-          }
-          .footer_attribution {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            .footer_name {
-              color: var(--un-color-blue-text);
-              font-size: var(--un-font-size-normal);
-              font-weight: var(--un-font-weight-bold);
-            }
-            .footer_role {
-              color: var(--un-color-grey-text);
-              font-size: var(--un-font-size-xxxs);
-              font-weight: var(--un-font-weight-light);
-              letter-spacing: 0.1em;
-              text-transform: uppercase;
-            }
-          }
+          height: 18px;
+          width: 18px;
         }
       }
-      /* ── CTAs ── */
-      .footer_ctas {
+      a.footer_more_link {
         align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        .footer_download_btn {
-          align-items: center;
-          background: var(--un-color-yellow);
-          border-radius: 100px;
-          color: #1a1100;
-          display: inline-flex;
-          font-size: var(--un-font-size-xs);
-          font-weight: var(--un-font-weight-bold);
-          gap: 10px;
-          padding: 12px 15px;
-          text-decoration: none;
-          transition: background 0.2s ease;
-          &:hover {
-            box-shadow:
-              0 10px 32px rgba(255, 199, 44, 0.5),
-              0 0 0 6px rgba(255, 199, 44, 0.12);
-            transform: translateY(-2px);
-          }
-          svg {
-            flex: 0 0 auto;
-            height: 18px;
-            width: 18px;
-          }
+        border-bottom: 1px solid color-mix(in srgb, #fff 40%, transparent);
+        color: #fff;
+        display: inline-flex;
+        font-size: var(--un-font-size-xxs);
+        font-weight: var(--un-font-weight-semibold);
+        gap: 10px;
+        padding: 6px 0;
+        text-decoration: none;
+        transition: gap 0.2s ease;
+        &:hover {
+          gap: 16px;
         }
-        .footer_more_link {
-          align-items: center;
-          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-          color: var(--un-color-grey-dark);
-          display: inline-flex;
-          font-size: var(--un-font-size-xxs);
-          font-weight: var(--un-font-weight-semibold);
-          gap: 10px;
-          padding: 6px;
-          text-decoration: none;
-          &:hover {
-            color: var(--un-color-blue-text);
-            gap: 16px;
-          }
-          svg {
-            flex: 0 0 auto;
-            height: 16px;
-            width: 16px;
-          }
-        }
-      }
-
-      /* ── Logo ── */
-      .footer_logo_wrap {
-        .footer_logo {
-          /*display: block;*/
-          display: none;
-          height: auto;
-          width: 140px;
-        }
-      }
-    }
-
-    /* ── Tablet (≤1024px) ── */
-    @media (max-width: 1024px) {
-      .footer_content {
-        .footer_quote_section {
-          flex-direction: column;
-          gap: 24px;
-          .footer_photo_wrap {
-            .footer_photo {
-              height: 160px;
-              width: 160px;
-            }
-          }
-          .footer_quote_wrap {
-            .footer_quote_mark {
-              font-size: clamp(90px, 10vw, 100px);
-              top: clamp(-60px, -5vw, -50px);
-            }
-            .footer_quote {
-              font-size: clamp(var(--un-font-size-xl), 2.5vw, var(--un-font-size-xxl));
-              text-align: center;
-            }
-            .footer_attribution {
-              align-items: center;
-              .footer_name,
-              .footer_role {
-                text-align: center;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    /* ── Mobile (≤600px) ── */
-    @media (max-width: 600px) {
-      .footer_content {
-        .footer_quote_section {
-          .footer_photo_wrap {
-            .footer_photo {
-              height: 140px;
-              width: 140px;
-            }
-          }
-          .footer_quote_wrap {
-            .footer_quote {
-              font-size: var(--un-font-size-xl);
-            }
-          }
+        svg {
+          flex: 0 0 auto;
+          height: 16px;
+          width: 16px;
         }
       }
     }
